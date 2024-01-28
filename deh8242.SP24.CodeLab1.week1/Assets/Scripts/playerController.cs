@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     public float moveSpeed = 10.0f;
+    public float jumpForce = 5.0F;
     private Rigidbody playerRB;
     
     // Start is called before the first frame update
@@ -18,7 +19,17 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetKey((KeyCode.D)))
         {
-            playerRB.AddForce( moveSpeed * Vector3.right);
+            playerRB.AddForce( moveSpeed * Vector3.forward);
+        }
+        
+        if (Input.GetKey((KeyCode.A)))
+        {
+            playerRB.AddForce( moveSpeed * Vector3.back);
+        }
+        
+        if (Input.GetKey((KeyCode.Space)))
+        {
+            playerRB.AddForce( jumpForce * Vector3.up);
         }
     }
 }
