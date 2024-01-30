@@ -5,7 +5,8 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     public float moveSpeed = 10.0f;
-    public float jumpForce = 5.0F;
+    public float jumpForce = 5.0f;
+    public float maxVelocity = 10;
     private Rigidbody playerRB;
     
     // Start is called before the first frame update
@@ -34,6 +35,15 @@ public class playerController : MonoBehaviour
         {
             playerRB.AddForce( jumpForce * Vector3.up);
         }
+
+        if (playerRB.velocity.magnitude > maxVelocity)
+        {
+            Vector3 newVelocity = playerRB.velocity.normalized;
+            newVelocity *= maxVelocity;
+            playerRB.velocity = newVelocity;
+        }
+        
+        Debug.Log(message:"Current Velocity: " + playerRB.velocity);
         
         
     }

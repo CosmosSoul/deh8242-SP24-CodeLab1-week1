@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyController : MonoBehaviour
+public class moveLeftX : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +14,6 @@ public class enemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z < -25)
-        {
-            Destroy(this.gameObject);
-        }
+        transform.Translate(Vector3.back * speed * Time.deltaTime);
     }
 }
