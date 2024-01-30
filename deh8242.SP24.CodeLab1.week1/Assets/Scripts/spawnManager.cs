@@ -6,7 +6,6 @@ public class spawnManager : MonoBehaviour
 {
     private float spawnDelay = 2;
     private float spawnInterval = 1;
-    //public float randomPos = Random.Range(1, 2);
     public GameObject obstacle;
     
     // Start is called before the first frame update
@@ -24,8 +23,9 @@ public class spawnManager : MonoBehaviour
     void SpawnObjects()
     {
        // Vector3.spawnLocation = new Vector3(30, randomPos, 0);
-
-        Instantiate(obstacle, new Vector3(0,2,0), obstacle.transform.rotation);
+       
+       
+       Instantiate(obstacle, new Vector3(0, Random.Range(0.5f, 3f),0), obstacle.transform.rotation);
         
 
     }
