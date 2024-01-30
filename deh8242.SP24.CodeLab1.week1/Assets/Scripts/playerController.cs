@@ -17,19 +17,32 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey((KeyCode.D)))
+      /*  if (Input.GetKey((KeyCode.D)))
         {
             playerRB.AddForce( moveSpeed * Vector3.forward);
         }
-        
         if (Input.GetKey((KeyCode.A)))
         {
             playerRB.AddForce( moveSpeed * Vector3.back);
         }
-        
+        */
+      float horizontalInput = Input.GetAxis(("Horizontal"));
+      
+      playerRB.AddForce(moveSpeed * horizontalInput * Vector3.forward);
+      
         if (Input.GetKey((KeyCode.Space)))
         {
             playerRB.AddForce( jumpForce * Vector3.up);
+        }
+        
+        
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("obstacle"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
