@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,9 @@ public class playerController : MonoBehaviour
     public float maxVelocity = 15.0f;
 
     private Rigidbody2D playerRB;
+
+    public bool isGrounded = true;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -24,9 +28,18 @@ public class playerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         playerRB.AddForce(moveSpeed * horizontalInput * Vector2.right);
 
-        if (Input.GetKey(KeyCode.Space))
+        if ((Input.GetKey(KeyCode.Space)) && (isGrounded))
         {
+            
             playerRB.AddForce(jumpForce * Vector2.up);
+            //isGrounded = false;
+            Debug.Log("Jump!");
+            
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+           // isGrounded = true;
     }
 }
