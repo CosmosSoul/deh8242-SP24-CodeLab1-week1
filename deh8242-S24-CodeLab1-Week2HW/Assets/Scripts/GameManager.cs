@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public int score = 0;
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public bool gameOver = false;
+    
 
 
     void Awake()
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOverText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

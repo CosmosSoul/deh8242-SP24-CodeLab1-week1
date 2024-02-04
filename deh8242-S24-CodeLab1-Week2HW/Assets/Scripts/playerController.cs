@@ -10,7 +10,7 @@ public class playerController : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
-    public float maxVelocity = 15.0f;
+    public float maxVelocity = 10.0f;
 
     private Rigidbody2D playerRB;
 
@@ -26,10 +26,17 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         playerRB.AddForce(moveSpeed * horizontalInput * Vector2.right);
 
-        if ((Input.GetKey(KeyCode.Space)) && (isGrounded))
+        if (playerRB.velocity.magnitude > maxVelocity)
+        {
+            Vector2 newVelocity = playerRB.velocity.normalized;
+            newVelocity *= maxVelocity;
+            playerRB.velocity = newVelocity;
+        }
+        if ((Input.GetKey(KeyCode.Space)) && (isGrounded) )
         {
             
             playerRB.AddForce(jumpForce * Vector2.up);
