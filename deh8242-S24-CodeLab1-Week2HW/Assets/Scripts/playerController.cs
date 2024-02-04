@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -36,6 +37,11 @@ public class playerController : MonoBehaviour
             Debug.Log("Jump!");
             
         }
+    }
+
+    void onCollisionEnter2D(Collision2D col)
+    {
+        //GameManager.instance.score++;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
