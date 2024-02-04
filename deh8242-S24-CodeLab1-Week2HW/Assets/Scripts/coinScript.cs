@@ -8,8 +8,11 @@ public class coinScript : MonoBehaviour
 
    
     private void OnCollisionEnter2D(Collision2D col)
-    {
+    {   
+        //score increments by one and new coin position randomized in the y, always ahead of the player
         GameManager.instance.score++;
         transform.position = new Vector2((transform.position.x + 11), Random.Range(1, 5));
+        
+        //add additional speed bonus on coin pickup
     }
 }

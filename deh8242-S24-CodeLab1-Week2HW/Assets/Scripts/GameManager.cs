@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        //QUESTION: Does instance mean we are setting this newly created gameManager to be persistent throughout scenes?
+        //I dont fully understand this logic :( 😢
         if (instance == null)
         {
             instance = this;
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //gameOverText made invisible on the first frame. 
         gameOverText.gameObject.SetActive(false);
     }
 
