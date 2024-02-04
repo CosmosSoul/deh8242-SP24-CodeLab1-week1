@@ -23,5 +23,10 @@ public class playerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         playerRB.AddForce(moveSpeed * horizontalInput * Vector2.right);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            playerRB.AddForce(jumpForce * Vector2.up);
+        }
     }
 }
