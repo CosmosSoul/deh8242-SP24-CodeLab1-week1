@@ -46,10 +46,7 @@ public class playerController : MonoBehaviour
         }
     }
 
-    void onCollisionEnter2D(Collision2D col)
-    {
-        //GameManager.instance.score++;
-    }
+
 
     private void OnCollisionEnter2D(Collision2D col)
     {

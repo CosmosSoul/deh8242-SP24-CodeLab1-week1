@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 6530004270288069464, guid: 9ddbe30d628d4a7499655825f1251ec9, type: 3}
+  gameOverText: {fileID: 6086496670265689038, guid: ef92935c3ac236b4b80357b4ab69a191, type: 3}
+  gameOver: 0
