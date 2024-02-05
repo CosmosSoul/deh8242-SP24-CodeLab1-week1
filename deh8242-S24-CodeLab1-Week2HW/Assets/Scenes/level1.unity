@@ -285,9 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71881b04d37f23a4bb7874a39242b863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
-  maxVelocity: 15
+  moveSpeed: 8
+  jumpForce: 35
+  maxVelocity: 20
   isGrounded: 1
 --- !u!1 &302657726
 GameObject:
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 302657727}
   m_Layer: 0
   m_Name: ground.v1 (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 1022501742}
   m_Layer: 0
   m_Name: ground.v1 (2)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 1508473778}
   m_Layer: 0
   m_Name: ground.v1
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
