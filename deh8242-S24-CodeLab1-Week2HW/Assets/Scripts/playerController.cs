@@ -41,7 +41,7 @@ public class playerController : MonoBehaviour
         {
             
             playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce * 20));
-           // isGrounded = false;
+            isGrounded = false;
             Debug.Log("Jump!");
             
         }
@@ -58,7 +58,7 @@ public class playerController : MonoBehaviour
 
     }
     
-    private void OnCollisionExit2D(Collision2D other)
+   /* private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("ground"))
         {
@@ -66,4 +66,5 @@ public class playerController : MonoBehaviour
         }
 
     }
+    */
 }

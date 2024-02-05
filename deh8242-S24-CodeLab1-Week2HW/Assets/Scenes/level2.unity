@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 10574829}
   m_Layer: 0
   m_Name: ground.v1 (3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 302657727}
   m_Layer: 0
   m_Name: ground.v1 (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 1022501742}
   m_Layer: 0
   m_Name: ground.v1 (2)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,7 +1096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 610428141197096749, guid: 476430c836ba6e946af7b36c1b5a2672, type: 3}
       propertyPath: jumpForce
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 610428141197096749, guid: 476430c836ba6e946af7b36c1b5a2672, type: 3}
       propertyPath: moveSpeed
