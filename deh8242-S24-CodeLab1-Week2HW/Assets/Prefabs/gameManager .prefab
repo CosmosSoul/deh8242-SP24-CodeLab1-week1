@@ -153,6 +153,7 @@ MonoBehaviour:
   scoreText: {fileID: 2940095738095495495}
   gameOverText: {fileID: 418373528385231714}
   gameOver: 0
+  gameAudio: {fileID: 7958141920581807418}
 --- !u!82 &7958141920581807418
 AudioSource:
   m_ObjectHideFlags: 0

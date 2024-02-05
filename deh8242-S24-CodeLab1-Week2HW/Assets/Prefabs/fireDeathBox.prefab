@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aee6ad268bae6d488162b959a5caf5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameAudio: {fileID: 7958141920581807418, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+  fireSound: {fileID: 8300000, guid: 61c2e206c4ae7d04389e23615761c5fe, type: 3}
 --- !u!61 &9198752226098237133
 BoxCollider2D:
   m_ObjectHideFlags: 0
