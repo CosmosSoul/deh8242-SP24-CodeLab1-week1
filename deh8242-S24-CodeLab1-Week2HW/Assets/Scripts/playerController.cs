@@ -36,11 +36,12 @@ public class playerController : MonoBehaviour
             newVelocity *= maxVelocity;
             playerRB.velocity = newVelocity;
         }
-        if ((Input.GetKey(KeyCode.Space)) && (isGrounded) )
+        
+        if ((Input.GetKeyDown(KeyCode.Space)) && (isGrounded) && (!GameManager.instance.gameOver))
         {
             
             playerRB.AddForce(jumpForce * Vector2.up);
-            //isGrounded = false;
+            isGrounded = false;
             Debug.Log("Jump!");
             
         }
@@ -48,8 +49,12 @@ public class playerController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter(Collision collision)
     {
-           // isGrounded = true;
+        if (collision.other.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+
     }
 }
