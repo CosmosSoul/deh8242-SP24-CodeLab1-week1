@@ -8,7 +8,7 @@ public class playerController : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
 
-    public float jumpForce = 5.0f;
+    public float jumpForce = 35.0f;
 
     public float maxVelocity = 10.0f;
 
@@ -37,11 +37,11 @@ public class playerController : MonoBehaviour
             playerRB.velocity = newVelocity;
         }
         
-        if ((Input.GetKeyDown(KeyCode.Space)) && (isGrounded) && (!GameManager.instance.gameOver))
+        if ((Input.GetKeyDown(KeyCode.Space)) && (isGrounded) && (GameManager.instance.gameOver == false))
         {
             
-            playerRB.AddForce(jumpForce * Vector2.up);
-            isGrounded = false;
+            playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce * 20));
+           // isGrounded = false;
             Debug.Log("Jump!");
             
         }
@@ -49,11 +49,20 @@ public class playerController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.other.CompareTag("ground"))
+        if (other.gameObject.CompareTag("ground"))
         {
             isGrounded = true;
+        }
+
+    }
+    
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("ground"))
+        {
+            isGrounded = false;
         }
 
     }
