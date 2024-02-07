@@ -79,6 +79,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Current Level: " + levelNum + "\n Score: " + Score;
+        scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore;
     }
 }
