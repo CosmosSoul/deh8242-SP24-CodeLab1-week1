@@ -20,7 +20,8 @@ public class goalScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        //onCollision with goal sprite, the next level loads
+        //onCollision with goal sprite, the next level loads and levelNum increments by 1
+        GameManager.instance.levelNum++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
