@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour
     {
         get
         {
+            //QUESTION: Does every getter require something to be returned?
             return score;
         }
         set
         {
+            //QUESTION: Does every setter require a value assignment?
             score = value;
             Debug.Log("score update!");
 
@@ -43,11 +45,13 @@ public class GameManager : MonoBehaviour
         get
         {
             highScore = PlayerPrefs.GetInt(KEY_HIGH_SCORE);
+            //QUESTION: Does every getter require something to be returned?
             return highScore;
         }
         set
         {
             Debug.Log("We Have a New High Score!");
+            //QUESTION: Does every setter require a value assignment?
             highScore = value;
             PlayerPrefs.SetInt(KEY_HIGH_SCORE, highScore);
         }
