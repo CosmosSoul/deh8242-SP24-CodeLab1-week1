@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
    
-    private const string KEY_HIGH_SCORE = "The Current High Score is: ";
+    private const string KEY_HIGH_SCORE = "High Score";
 
     int HighScore
     {
