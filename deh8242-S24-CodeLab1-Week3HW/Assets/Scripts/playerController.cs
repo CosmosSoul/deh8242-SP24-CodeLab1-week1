@@ -45,6 +45,7 @@ public class playerController : MonoBehaviour
             Debug.Log("Jump!");
             
         }
+
     }
 
 

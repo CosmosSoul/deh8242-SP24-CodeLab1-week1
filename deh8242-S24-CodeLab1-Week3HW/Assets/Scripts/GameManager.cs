@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //can reset high score to zero by resetting PlayersPrefer for testing purposes
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
+        }
+        
         scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore;
     }
 }
