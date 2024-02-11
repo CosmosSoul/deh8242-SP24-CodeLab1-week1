@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 using System;
+using UnityEngine.SceneManagement;
 using File = System.IO.File;
 
 
@@ -65,7 +66,8 @@ public class GameManager : MonoBehaviour
         }
         set
         {
-            Debug.Log("We Have a New High Scorer!");
+            Debug.Log("We Have a New High Scorer" +
+                      "!");
             //QUESTION: Does every setter require a value assignment?
             highScore = value;
             
@@ -113,6 +115,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
+        
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Return) && (gameOverText))
+        {
+            gameOverText.gameObject.SetActive(false);
+            gameOver = false;
+            SceneManager.LoadScene(0);
+            
         }
         
         scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore;

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+
+    public static playerController isntance;
     public float moveSpeed = 5.0f;
 
     public float jumpForce = 35.0f;
@@ -22,6 +24,8 @@ public class playerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
     }
+
+
 
     // Update is called once per frame
     void Update()

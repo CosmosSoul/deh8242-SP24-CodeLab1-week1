@@ -23,10 +23,8 @@ public class deathBoxScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && (GameManager.instance.gameOverText))
-        {
-            SceneManager.LoadScene(0);
-            
-        }
+        //Game can restart here on  if game over 
+     
     }
+    
 }

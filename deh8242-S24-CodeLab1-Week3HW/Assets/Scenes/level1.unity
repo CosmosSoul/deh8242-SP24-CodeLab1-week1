@@ -1279,6 +1279,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_text
+      value: "Game END!\n\nPress Enter/Return \nto try again \U0001F609"
+      objectReference: {fileID: 0}
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_fontSize
+      value: 50.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_margin.x
+      value: -411.40356
+      objectReference: {fileID: 0}
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_margin.z
+      value: -366.63855
+      objectReference: {fileID: 0}
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 418373528385231714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045729291703745510, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2818011216050798714, guid: 207b7ecd756eb7f4ca28dc05397c60b5, type: 3}
       propertyPath: m_Name
       value: gameManager
