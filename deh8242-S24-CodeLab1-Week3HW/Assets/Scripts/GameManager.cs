@@ -65,10 +65,19 @@ public class GameManager : MonoBehaviour
         }
         set
         {
-            Debug.Log("We Have a New High Score!");
+            Debug.Log("We Have a New High Scorer!");
             //QUESTION: Does every setter require a value assignment?
             highScore = value;
-           // PlayerPrefs.SetInt(KEY_HIGH_SCORE, highScore);
+            
+            // PlayerPrefs.SetInt(KEY_HIGH_SCORE, highScore);
+            string fileContent = "" + highScore;
+
+            if (!Directory.Exists(Application.dataPath + DATA_DIR))
+            {
+                Directory.CreateDirectory(Application.dataPath + DATA_DIR);
+            }
+            
+            File.WriteAllText(DATA_FULL_HS_FILE_PATH, fileContent);
         }
 
     }
