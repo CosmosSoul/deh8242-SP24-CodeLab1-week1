@@ -14,5 +14,7 @@ public class deathBoxScript : MonoBehaviour
         GameManager.instance.gameOver = true;
         GameManager.instance.gameOverText.gameObject.SetActive(true);
         GameManager.instance.gameAudio.PlayOneShot(fireSound, 1.5f);
+        
+        //add restart button here
     }
 }

@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
+using Input = UnityEngine.Input;
+using System;
+using File = System.IO.File;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -47,7 +52,14 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            highScore = PlayerPrefs.GetInt(KEY_HIGH_SCORE);
+            //highScore = PlayerPrefs.GetInt(KEY_HIGH_SCORE);
+
+            if (File.Exists(DATA_FULL_HS_FILE_PATH))
+            {
+                string fileContents = File.ReadAllText(DATA_FULL_HS_FILE_PATH);
+                highScore = Int32.Parse(fileContents);
+            }
+ 
             //QUESTION: Does every getter require something to be returned?
             return highScore;
         }
@@ -56,7 +68,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("We Have a New High Score!");
             //QUESTION: Does every setter require a value assignment?
             highScore = value;
-            PlayerPrefs.SetInt(KEY_HIGH_SCORE, highScore);
+           // PlayerPrefs.SetInt(KEY_HIGH_SCORE, highScore);
         }
 
     }
@@ -91,7 +103,7 @@ public class GameManager : MonoBehaviour
         //can reset high score to zero by resetting PlayersPrefer for testing purposes
         if (Input.GetKeyDown(KeyCode.Delete))
         {
-            PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
+            //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
         }
         
         scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore;
