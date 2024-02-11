@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public AudioSource gameAudio;
 
+    private const string DATA_DIR = "/Data/";
+    private const string DATA_HS_FILE = "hs.txt";
+    private string DATA_FULL_HS_FILE_PATH;
     public int Score
     {
         get
@@ -78,6 +81,8 @@ public class GameManager : MonoBehaviour
     {
         //gameOverText made invisible on the first frame. 
         gameOverText.gameObject.SetActive(false);
+        DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+
     }
 
     // Update is called once per frame
