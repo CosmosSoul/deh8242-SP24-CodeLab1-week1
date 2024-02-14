@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private float timer = 0;
     public int maxTime = 30;
+    public float gameTime = 0;
     
     public int Score
     
@@ -110,13 +111,15 @@ public class GameManager : MonoBehaviour
         //gameOverText made invisible on the first frame. 
         gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //can reset high score to zero by resetting PlayersPrefer for testing purposes
+        
+        //can reset high score to zero by resetting PlayerPrefs for testing purposes
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
@@ -131,22 +134,27 @@ public class GameManager : MonoBehaviour
             levelNum = 1;
             score = 0;
             SceneManager.LoadScene(0);
-            
+            timer = 0;
+
         }
 
         if (!gameOver)
         {
-            
-            scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore + "\nTime: " + timer;
+            timer += Time.deltaTime;
+            scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore + "\nTime: " + (int)timer;
 
         }
         else
         {
             //display  high score list when the game is over. 
-            scoreText.text = "Game over! 🤣";
+            gameTime = timer;
+            scoreText.text = "Game over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
+                             "\nCurrent High Score is: " + HighScore;
+
+
         }
 
-        timer += Time.deltaTime;
+       
 
 
     }
