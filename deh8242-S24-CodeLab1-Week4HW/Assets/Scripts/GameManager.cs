@@ -26,7 +26,12 @@ public class GameManager : MonoBehaviour
     private const string DATA_DIR = "/Data/";
     private const string DATA_HS_FILE = "hs.txt";
     private string DATA_FULL_HS_FILE_PATH;
+
+    private float timer = 0;
+    public int maxTime = 30;
+    
     public int Score
+    
     {
         get
         {
@@ -128,7 +133,21 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
             
         }
-        
-        scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore;
+
+        if (!gameOver)
+        {
+            
+            scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore + "\nTime: " + timer;
+
+        }
+        else
+        {
+            //display  high score list when the game is over. 
+            scoreText.text = "Game over! 🤣";
+        }
+
+        timer += Time.deltaTime;
+
+
     }
 }
