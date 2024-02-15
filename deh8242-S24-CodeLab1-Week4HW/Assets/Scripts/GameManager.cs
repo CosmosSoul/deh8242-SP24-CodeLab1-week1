@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
 
     private const string KEY_HIGH_SCORE = "High Score";
 
-    
+    /*
     int HighScore
     {
         get
@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    */
 
     void Awake()
     {
@@ -178,7 +179,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
-           //File.WriteAllLines(DATA_FULL_HS_FILE_PATH, 0);
+           //File.WriteAllText(DATA_FULL_HS_FILE_PATH, "1, 2");
         
         }
         
