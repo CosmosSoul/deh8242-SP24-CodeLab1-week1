@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
     public float gameTime = 0;
     
     public int Score
-    
     {
         get
         {
@@ -44,17 +43,73 @@ public class GameManager : MonoBehaviour
             //QUESTION: Does every setter require a value assignment?
             score = value;
             Debug.Log("score update!");
+            
+            
 
-            if (score > HighScore)
+            if (isHighScore(score))
             {
-                HighScore = score;
+                int highScoreSlot = -1;
+
+                for (int i = 0; i < HighScores.Count; i++)
+                {
+                    if (score > highScores[i])
+                    {
+                        highScoreSlot = i;
+                        break;
+                    }
+                }
+
+                highScores.Insert(highScoreSlot, score);
+
+                highScores = highScores.GetRange(0, 5);
+
+                string scoreBoardText = "";
+
+                foreach (var highScore in highScores)
+                {
+                    scoreBoardText += highScore + "\n";
+                }
+
+                highScoresString = scoreBoardText;
+                
+                File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
+                
             }
         }
     }
 
-   
+    private string highScoresString = "";
+
+    private List<int> highScores;
+
+    public List<int> HighScores
+    {
+        get
+        {
+            if (highScores == null)
+            {
+                highScores = new List<int>();
+
+                highScoresString = File.ReadAllText((DATA_FULL_HS_FILE_PATH));
+
+                highScoresString = highScoresString.Trim();
+
+                string[] highScoresArray = highScoresString.Split("\n");
+
+                for (int i = 0; i < highScoresArray.Length; i++)
+                {
+                    int currentScore = Int32.Parse(highScoresArray[i]);
+                    highScores.Add(currentScore);
+                }
+            }
+            return highScores;
+        }
+    }
+
+
     private const string KEY_HIGH_SCORE = "High Score";
 
+    
     int HighScore
     {
         get
@@ -123,12 +178,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Delete))
         {
             //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
+           //File.WriteAllLines(DATA_FULL_HS_FILE_PATH, 0);
         
         }
         
         //Game is restarted and level/score resets
         if (Input.GetKeyDown(KeyCode.Return) && (gameOverText))
         {
+            
+            // add gameOver Scene later
             gameOverText.gameObject.SetActive(false);
             gameOver = false;
             levelNum = 1;
@@ -141,21 +199,29 @@ public class GameManager : MonoBehaviour
         if (!gameOver)
         {
             timer += Time.deltaTime;
-            scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScore + "\nTime: " + (int)timer;
+            scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScores[0] + "\nTime: " + (int)timer;
 
         }
         else
         {
-            //display  high score list when the game is over. 
+            //display high score list when the game is over. 
             gameTime = timer;
             scoreText.text = "Game over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
-                             "\nCurrent High Score is: " + HighScore;
+                             "\nCurrent High Score is: " + HighScores[0] + "\n\nThe high scores are: " + highScoresString;
 
 
         }
+    }
+    bool isHighScore(int score)
+    {
+        for (int i = 0; i < HighScores.Count; i++)
+        {
+            if (highScores[i] < score)
+            {
+                return true;
+            }
+        }
 
-       
-
-
+        return false;
     }
 }
