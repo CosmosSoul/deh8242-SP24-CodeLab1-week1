@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private string highScoresString = "";
+    public string highScoresString = "";
 
     private List<int> highScores;
 
@@ -208,7 +208,9 @@ public class GameManager : MonoBehaviour
             //display high score list when the game is over. 
             gameTime = timer;
             scoreText.text = "Game over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
-                             "\nCurrent High Score is: " + HighScores[0] + "\n\nThe high scores are: " + highScoresString;
+                             "\n\nThe high scores are: " + highScoresString;
+            
+            
 
 
         }

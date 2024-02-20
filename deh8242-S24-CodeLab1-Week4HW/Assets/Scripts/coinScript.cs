@@ -11,7 +11,7 @@ public class coinScript : MonoBehaviour
     {   
         //score increments by one and new coin position randomized in the y, always ahead of the player
         GameManager.instance.Score++;
-        transform.position = new Vector2((transform.position.x + 11), Random.Range(2, 3.5f));
+        transform.position = new Vector2((transform.position.x + 11f), Random.Range(2f, 3f));
         
         //add additional speed bonus on coin pickup
     }

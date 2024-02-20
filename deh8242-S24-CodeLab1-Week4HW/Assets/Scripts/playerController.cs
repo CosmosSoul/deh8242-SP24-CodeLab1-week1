@@ -47,6 +47,7 @@ public class playerController : MonoBehaviour
             playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce * 20));
             isGrounded = false;
             Debug.Log("Jump!");
+            //Debug.Log(GameManager.instance.HighScores);
             
         }
 
