@@ -180,7 +180,16 @@ public class GameManager : MonoBehaviour
         {
             //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
            //File.WriteAllText(DATA_FULL_HS_FILE_PATH, "1, 2");
-        
+           //highScores = new List<int>();
+          // highScores.Add(0);
+          /// highScores.Add(0);
+          // highScores.Add(0);
+         //  highScores.Add(0);
+
+         highScoresString = "1\n 1\n 1\n 1\n 1\n";
+         File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
+         Debug.Log((highScoresString));
+
         }
         
         //Game is restarted and level/score resets
