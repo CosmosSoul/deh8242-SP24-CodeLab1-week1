@@ -204,6 +204,7 @@ public class GameManager : MonoBehaviour
         //week4 class code bug was avoided with this gameOver check
         if (!gameOver)
         {
+            //BUG DETECTED! When Resetting score during GameOver screen, highscore[0] value get stuck at preReset value and does not properly update until Unity Play ends and Restarts 
             timer += Time.deltaTime;
             scoreText.text = "Level: " + levelNum + "\nScore: " + Score + "\nCurrent High Score is: " + HighScores[0] + "\nTime: " + (int)timer;
 
