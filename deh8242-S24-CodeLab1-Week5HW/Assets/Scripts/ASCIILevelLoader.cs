@@ -37,6 +37,8 @@ public class ASCIILevelLoader : MonoBehaviour
         instance = this;
 
         FILE_PATH = Application.dataPath + "/Levels/LevelNum.txt";
+        
+        LoadLevel();
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class ASCIILevelLoader : MonoBehaviour
     {
         Destroy(level);
 
-        level = new GameObject("Level Block");
+        level = new GameObject("Level Container");
 
         string[] lines = File.ReadAllLines(FILE_PATH.Replace("Num", currentLevel + ""));
 
@@ -57,15 +59,23 @@ public class ASCIILevelLoader : MonoBehaviour
             for (int xLevelPos = 0; xLevelPos < characters.Length; xLevelPos++)
             {
                 char c = characters[xLevelPos];
-            }
+                
+                GameObject newObject = null;
 
-            GameObject newObject = null;
+                switch (c)
+                {
+                    case 'B':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Block"));
+                        break;
+                    
+                }
 
-            if (newObject != null)
-            {
-                newObject.transform.parent = level.transform;
+                if (newObject != null)
+                {
+                    newObject.transform.parent = level.transform;
 
-                //newObject.transform.position = new Vector2(xLevelPos, -yLevelPos);
+                    newObject.transform.position = new Vector2(xLevelPos, -yLevelPos);
+                }
             }
         }
     }
