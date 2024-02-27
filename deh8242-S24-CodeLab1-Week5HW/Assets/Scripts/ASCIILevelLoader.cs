@@ -67,6 +67,13 @@ public class ASCIILevelLoader : MonoBehaviour
                     case 'B':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/Block"));
                         break;
+                    case 'C':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/coin"));
+                        break;
+                    case 'G':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/goal"));
+                        break;
+                    
                     
                 }
 
@@ -74,7 +81,7 @@ public class ASCIILevelLoader : MonoBehaviour
                 {
                     newObject.transform.parent = level.transform;
 
-                    newObject.transform.position = new Vector2(xLevelPos, -yLevelPos);
+                    newObject.transform.position = new Vector2(xLevelPos + 30, -yLevelPos + 10);
                 }
             }
         }
