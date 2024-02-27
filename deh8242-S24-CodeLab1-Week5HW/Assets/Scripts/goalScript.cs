@@ -23,5 +23,6 @@ public class goalScript : MonoBehaviour
         //onCollision with goal sprite, the next level loads and levelNum increments by 1
         GameManager.instance.levelNum++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ASCIILevelLoader.instance.CurrenLevel++;
     }
 }
