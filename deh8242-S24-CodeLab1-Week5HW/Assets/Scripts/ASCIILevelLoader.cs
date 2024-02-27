@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 using System.IO;
+using TMPro;
 using File = System.IO.File;
 
 public class ASCIILevelLoader : MonoBehaviour
@@ -46,5 +47,26 @@ public class ASCIILevelLoader : MonoBehaviour
         level = new GameObject("Level Block");
 
         string[] lines = File.ReadAllLines(FILE_PATH.Replace("Num", currentLevel + ""));
+
+        for (int yLevelPos = 0; yLevelPos < lines.Length; yLevelPos++)
+        {
+            string line = lines[yLevelPos].ToUpper();
+
+            char[] characters = line.ToCharArray();
+
+            for (int xLevelPos = 0; xLevelPos < characters.Length; xLevelPos++)
+            {
+                char c = characters[xLevelPos];
+            }
+
+            GameObject newObject = null;
+
+            if (newObject != null)
+            {
+                newObject.transform.parent = level.transform;
+
+                //newObject.transform.position = new Vector2(xLevelPos, -yLevelPos);
+            }
+        }
     }
 }
