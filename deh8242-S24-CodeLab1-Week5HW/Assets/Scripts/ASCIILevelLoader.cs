@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 using System.IO;
+using File = System.IO.File;
 
 public class ASCIILevelLoader : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class ASCIILevelLoader : MonoBehaviour
         Destroy(level);
 
         level = new GameObject("Level Block");
-        
+
+        string[] lines = File.ReadAllLines(FILE_PATH.Replace("Num", currentLevel + ""));
     }
 }
