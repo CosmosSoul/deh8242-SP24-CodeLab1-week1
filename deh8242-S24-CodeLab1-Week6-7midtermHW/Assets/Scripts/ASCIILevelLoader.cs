@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 using System.IO;
+using Unity.VisualScripting;
 
 public class ASCIILevelLoader : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ASCIILevelLoader : MonoBehaviour
 
     private GameObject level;
 
-    public static ASCIILevelLoader instance;
+   
 
     private string FILE_PATH;
 
@@ -23,16 +24,19 @@ public class ASCIILevelLoader : MonoBehaviour
         set
         {
             currentLevel = value;
-            //LoadLevel();
+            LoadLevel();
         }
     }
     
+    public static ASCIILevelLoader instance;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
 
-        FILE_PATH = Application.dataPath + "/Levels/LevelsNum.txt";
+        FILE_PATH = Application.dataPath + "/Levels/LevelNum.txt";
+        
+        LoadLevel();
     }
 
     // Update is called once per frame
@@ -60,6 +64,26 @@ public class ASCIILevelLoader : MonoBehaviour
                 char c = characters[xPos];
 
                 GameObject newObject = null;
+
+                switch (c)
+                {
+                    case 'B':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/groundBlock"));
+                        break;
+                    case '0':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target0"));
+                        break;
+                    case '1':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target1"));
+                        break;
+                }
+
+                if (newObject != null)
+                {
+                    newObject.transform.parent = level.transform;
+
+                    newObject.transform.position = new Vector2(xPos, -yPos);
+                }
             }
         }
     }
