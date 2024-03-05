@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        scoreText.text = "Score: " + Score + "\n Time: " + timer;
+        scoreText.text = "Score: " + Score + "\nTime: " + timer;
         
     }
 }

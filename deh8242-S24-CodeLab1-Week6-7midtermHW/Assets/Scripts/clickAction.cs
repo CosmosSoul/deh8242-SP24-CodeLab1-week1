@@ -19,6 +19,11 @@ public class clickAction : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (gameObject.CompareTag("gameOver"))
+        {
+            Debug.Log("Your game is now over!");
+        }
+        
         Destroy(gameObject);
         Debug.Log("you clicked me!");
         GameManager.instance.score++;
