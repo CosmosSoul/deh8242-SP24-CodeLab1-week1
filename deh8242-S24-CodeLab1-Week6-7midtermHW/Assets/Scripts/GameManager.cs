@@ -115,8 +115,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //setting gameManager to be a singleton that will persist between scenes and level, so score and time tracking remains consistent
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
+
     // Start is called before the first frame update
-    
     void Start()
     {
         //make sure gameOverText does not display on Start
