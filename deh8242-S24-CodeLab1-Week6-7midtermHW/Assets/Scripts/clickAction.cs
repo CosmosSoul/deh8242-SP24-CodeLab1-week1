@@ -21,5 +21,6 @@ public class clickAction : MonoBehaviour
     {
         Destroy(gameObject);
         Debug.Log("you clicked me!");
+        GameManager.instance.score++;
     }
 }
