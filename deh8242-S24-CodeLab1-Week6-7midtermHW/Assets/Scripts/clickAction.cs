@@ -36,7 +36,7 @@ public class clickAction : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("you clicked one");
-            GameManager.instance.score++;
+            GameManager.instance.inputText.text += 1;
         }
           else if (gameObject.CompareTag("target2"))
         {

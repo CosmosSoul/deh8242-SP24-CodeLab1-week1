@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int score;
     private int highScore = 0;
+    public int calculation;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -148,6 +149,8 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         scoreText.text = "Score: " + Score + "\nTime: " + timer;
-        
+
+        inputText.text = "Your input: " + calculation;
+
     }
 }
