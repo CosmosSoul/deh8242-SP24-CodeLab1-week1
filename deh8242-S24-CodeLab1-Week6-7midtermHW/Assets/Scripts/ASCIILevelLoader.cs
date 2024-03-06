@@ -4,6 +4,7 @@ using System.Net;
 using UnityEngine;
 using System.IO;
 using Unity.VisualScripting;
+using UnityEditor.iOS;
 
 public class ASCIILevelLoader : MonoBehaviour
 {
@@ -76,6 +77,38 @@ public class ASCIILevelLoader : MonoBehaviour
                     case '1':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target1"));
                         break;
+                    case '2':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target2"));
+                        break;
+                    case '3':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target3"));
+                        break;
+                    case '4':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target4"));
+                        break;
+                    case '5':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target5"));
+                        break;
+                    case '6':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target6"));
+                        break;
+                    case '7':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target7"));
+                        break;
+                    case '8':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target8"));
+                        break;
+                    case '9':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target9"));
+                        break;
+                    case '=':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetCalc"));
+                        break;
+                    case 'C':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetClear"));
+                        break;
+                    
+                        
                 }
 
                 if (newObject != null)

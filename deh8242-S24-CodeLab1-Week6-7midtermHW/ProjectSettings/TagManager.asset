@@ -17,7 +17,7 @@ TagManager:
   - target8
   - target9
   - calculate
-  - reset
+  - clear
   layers:
   - Default
   - TransparentFX
