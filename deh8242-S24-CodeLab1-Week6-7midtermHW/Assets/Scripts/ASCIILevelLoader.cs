@@ -101,7 +101,7 @@ public class ASCIILevelLoader : MonoBehaviour
                     case '9':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/target9"));
                         break;
-                    case '=':
+                    case 'E':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetCalc"));
                         break;
                     case 'C':

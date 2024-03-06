@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6802199167895972276}
   - component: {fileID: 6240811120549858966}
   m_Layer: 0
-  m_Name: targetCalc 1
-  m_TagString: target2
+  m_Name: targetClear
+  m_TagString: clear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

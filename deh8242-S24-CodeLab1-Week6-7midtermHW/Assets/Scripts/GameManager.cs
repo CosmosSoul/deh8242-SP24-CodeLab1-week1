@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI inputText;
 
     public bool gameOver;
 
