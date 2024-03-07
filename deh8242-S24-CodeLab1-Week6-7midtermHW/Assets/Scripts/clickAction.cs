@@ -21,9 +21,60 @@ public class clickAction : MonoBehaviour
 
     void OnMouseDown()
     {
+        
+        /*
+        string tagString = "";
+        
+        switch(tagString)
+        {
+            case "targetClear":
+                Debug.Log("Your input is clear, but you lost points! 😬");
+                break;
+            case "target1":
+                Debug.Log("you clicked one");
+                break;
+            case "target2":
+                Debug.Log("you clicked two");
+                break;
+            case "target3":
+                Debug.Log("you clicked three");
+                break;
+            case "target4":
+                Debug.Log("you clicked four");
+                break;
+            case "target5":
+                Debug.Log("you clicked six");
+                break;
+            case "target7":
+                Debug.Log("you clicked seven");
+                break;
+            case "target8":
+                Debug.Log("you clicked eight");
+                break;
+            case "target9":
+                Debug.Log("you clicked nine");
+                break;
+            case "calculate":
+                Debug.Log("you clicked one");
+                GameManager.instance.Calculaute();
+                break;
+            case "targetPlus":
+                Debug.Log("you clicked one");
+                break;
+            case "targetMinus":
+                Debug.Log("you clicked one");
+                break;
+            case "targetMultiply":
+                Debug.Log("you clicked one");
+                break;
+            case "targetDivide":
+                Debug.Log("you clicked one");
+                break;
+        }
+        */
         if (gameObject.CompareTag("clear"))
         {
-            Debug.Log("You cleared the board");
+            Debug.Log("You cleared the board but you lost points! 😬");
             GameManager.instance.score -= 5;
         }
         
@@ -43,7 +94,7 @@ public class clickAction : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("you clicked two");
-            GameManager.instance.score++;
+            GameManager.instance.calculation += 2;
         }
         else if (gameObject.CompareTag("target3"))
         {
@@ -113,7 +164,7 @@ public class clickAction : MonoBehaviour
         }
 
         // string tag = gameObject.tag;
-        /* 
+        /*
         switch (gameObject.CompareTag(c))
         {
             case 'target0':

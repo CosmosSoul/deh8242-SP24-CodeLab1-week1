@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public int score;
     private int highScore = 0;
     public int calculation;
+    public int num1;
+    public int num2;
+    public int targetNum;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -72,7 +75,32 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
+    public void Calculaute()
+    {
+        char c = 'f';
         
+        switch (c)
+        {
+            case '+':
+                calculation = num1 + num2;
+                break;
+            case '-':
+                calculation = num1 - num2;
+                break;
+            case '*':
+                calculation = num1 * num2;
+                break;
+            case '/':
+                calculation = num1 / num2;
+                break;
+        }
+
+        //num1 = calculation;
+
+
+
+    }
     public int Score
     {
         get
@@ -142,6 +170,8 @@ public class GameManager : MonoBehaviour
         
         //get relative application datapath, then append it to DATA_DIR and DATA_HS_FILE on the first frame
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+        
+        
     }
 
     // Update is called once per frame
@@ -150,8 +180,9 @@ public class GameManager : MonoBehaviour
         timer += Time.deltaTime;
         scoreText.text = "Score: " + Score + "\nTime: " + timer;
 
-        inputText.text = "Your input: " + calculation;
-
+        //inputText.text = "Your input: " + calculation;
+        //inputText.text = 
+           
     }
     
     
