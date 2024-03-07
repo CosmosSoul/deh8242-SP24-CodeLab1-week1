@@ -107,6 +107,18 @@ public class ASCIILevelLoader : MonoBehaviour
                     case 'C':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetClear"));
                         break;
+                    case 'P':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetPlus"));
+                        break;
+                    case 'S':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetMinus"));
+                        break;
+                    case 'M':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetMultiply"));
+                        break;
+                    case 'D':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/targetDivide"));
+                        break;
                     
                         
                 }

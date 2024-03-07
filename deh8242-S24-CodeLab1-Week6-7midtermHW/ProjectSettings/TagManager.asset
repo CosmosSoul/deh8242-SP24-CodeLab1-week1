@@ -18,6 +18,10 @@ TagManager:
   - target9
   - calculate
   - clear
+  - targetPlus
+  - targetMinus
+  - targetMultiply
+  - targetDivide
   layers:
   - Default
   - TransparentFX
