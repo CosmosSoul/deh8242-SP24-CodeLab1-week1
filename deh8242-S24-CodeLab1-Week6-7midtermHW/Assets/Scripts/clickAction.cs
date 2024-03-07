@@ -19,7 +19,8 @@ public class clickAction : MonoBehaviour
         
     }
 
-    void OnMouseDown()
+    
+   public void OnMouseDown()
     {
         
         /*
@@ -82,25 +83,26 @@ public class clickAction : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("you calculated");
-            GameManager.instance.score++;
+            GameManager.instance.Calculate();
         }
         else if (gameObject.CompareTag("target1"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked one");
-            GameManager.instance.calculation += 1;
+            GameManager.instance.num1 = 1;
+            
         }
         else if (gameObject.CompareTag("target2"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked two");
-            GameManager.instance.calculation += 2;
+            GameManager.instance.num1 = 2;
         }
         else if (gameObject.CompareTag("target3"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked three");
-            GameManager.instance.score++;
+            GameManager.instance.num1 = 3;
         }
         else if (gameObject.CompareTag("target4"))
         {

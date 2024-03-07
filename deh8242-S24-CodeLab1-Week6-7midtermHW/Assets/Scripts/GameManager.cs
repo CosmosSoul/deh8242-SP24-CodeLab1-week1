@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows;
 using File = System.IO.File;
@@ -12,8 +13,8 @@ public class GameManager : MonoBehaviour
     public int score;
     private int highScore = 0;
     public int calculation;
-    public int num1;
-    public int num2;
+    public int num1 = 0;
+    public int num2 = 0;
     public int targetNum;
 
     public TextMeshProUGUI scoreText;
@@ -76,8 +77,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Calculaute()
+    public void Calculate()
     {
+        
+        /*
         char c = 'f';
         
         switch (c)
@@ -95,11 +98,124 @@ public class GameManager : MonoBehaviour
                 calculation = num1 / num2;
                 break;
         }
-
+*/
         //num1 = calculation;
 
 
 
+    }
+
+    public void GetNum1()
+    {
+        inputText.text = "Click your first number!";
+
+       void OnMouseDown()
+    {
+        
+        if (gameObject.CompareTag("clear"))
+        {
+            Debug.Log("You cleared the board but you lost points! 😬");
+            GameManager.instance.score -= 5;
+        }
+        
+        else if (gameObject.CompareTag("calculate"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you calculated");
+            
+        }
+        else if (gameObject.CompareTag("target1"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked one");
+            num1 = 1;
+            
+        }
+        else if (gameObject.CompareTag("target2"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked two");
+            num1 = 2;
+        }
+        else if (gameObject.CompareTag("target3"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked three");
+            num1 = 3;
+        }
+        else if (gameObject.CompareTag("target4"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked four");
+            score++;
+        }
+        else if (gameObject.CompareTag("target5"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked five");
+            score++;
+        }
+        else if (gameObject.CompareTag("target6"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked six");
+            score++;
+        }
+        else if (gameObject.CompareTag("target7"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked seven");
+            score++;
+        }
+        else if (gameObject.CompareTag("target8"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked eight");
+            score++;
+        }
+        else if (gameObject.CompareTag("target9"))
+        {
+            Destroy(gameObject);
+            Debug.Log("you clicked nine");
+            score++;
+        }
+        else if (gameObject.CompareTag("targetPlus"))
+        {
+             Destroy(gameObject);
+             Debug.Log("you clicked plus");
+             score++;
+        }
+        else if (gameObject.CompareTag("targetMinus"))
+        {
+             Destroy(gameObject);
+             Debug.Log("you clicked minus");
+             score++;
+        }
+        else if (gameObject.CompareTag("targetMultiply"))
+        {
+             Destroy(gameObject);
+             Debug.Log("you clicked multiply");
+             score++;
+        }
+        else if (gameObject.CompareTag("targetDivide"))
+        {
+             Destroy(gameObject);
+             Debug.Log("you clicked divide");
+             score++;
+        }
+
+        // string tag = gameObject.tag;
+        /*
+        switch (gameObject.CompareTag(c))
+        {
+            case 'target0':
+                Debug.Log("You clicked a 0");
+                break;
+                
+        }
+        */
+        
+    }
     }
     public int Score
     {
@@ -180,7 +296,7 @@ public class GameManager : MonoBehaviour
         timer += Time.deltaTime;
         scoreText.text = "Score: " + Score + "\nTime: " + timer;
 
-        //inputText.text = "Your input: " + calculation;
+        inputText.text = "Your input: " + num1 + num2;
         //inputText.text = 
            
     }
