@@ -83,26 +83,26 @@ public class GameManager : MonoBehaviour
     public void Calculate()
     {
         
-        /*
-        char c = 'f';
+        num2 = int.Parse(inputText.text);
         
-        switch (c)
+        switch (operation)
         {
-            case '+':
+            case "+":
                 calculation = num1 + num2;
+                inputText.text = calculation.ToString();
                 break;
-            case '-':
+            case "-":
                 calculation = num1 - num2;
                 break;
-            case '*':
+            case "*":
                 calculation = num1 * num2;
                 break;
-            case '/':
+            case "/":
                 calculation = num1 / num2;
                 break;
         }
-*/
-        //num1 = calculation;
+
+        
 
 
 
@@ -223,6 +223,103 @@ public class GameManager : MonoBehaviour
             inputText.text += "1";
         }
     }
+    
+    public void Btn2()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "2";
+        }
+        else
+        {
+            inputText.text += "2";
+        }
+    }
+    
+    public void Btn3()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "3";
+        }
+        else
+        {
+            inputText.text += "3";
+        }
+    }
+    
+    public void Btn4()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "4";
+        }
+        else
+        {
+            inputText.text += "4";
+        }
+    }
+    
+    public void Btn5()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "5";
+        }
+        else
+        {
+            inputText.text += "5";
+        }
+    }
+    
+    public void Btn6()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "6";
+        }
+        else
+        {
+            inputText.text += "6";
+        }
+    }
+    
+    public void Btn7()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "7";
+        }
+        else
+        {
+            inputText.text += "7";
+        }
+    }
+    public void Btn8()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "8";
+        }
+        else
+        {
+            inputText.text += "8";
+        }
+    }
+    public void Btn9()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "9";
+        }
+        else
+        {
+            inputText.text += "9";
+        }
+    }
+    
+    
+    
 
     public void Addtion()
     {
@@ -231,6 +328,5 @@ public class GameManager : MonoBehaviour
         inputText.text = "";
 
     }
-    
     
 }

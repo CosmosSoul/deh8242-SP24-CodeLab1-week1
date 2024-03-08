@@ -97,50 +97,50 @@ public class clickAction : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("you clicked two");
-            GameManager.instance.clickNum = 2;
-            GameManager.instance.NumSet1();
+           //GameManager.instance.clickNum = 2;
+            GameManager.instance.Btn2();
         }
         else if (gameObject.CompareTag("target3"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked three");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn3();
         }
         else if (gameObject.CompareTag("target4"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked four");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn4();
         }
         else if (gameObject.CompareTag("target5"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked five");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn5();
         }
         else if (gameObject.CompareTag("target6"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked six");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn6();
         }
         else if (gameObject.CompareTag("target7"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked seven");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn7();
         }
         else if (gameObject.CompareTag("target8"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked eight");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn8();
         }
         else if (gameObject.CompareTag("target9"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked nine");
-            GameManager.instance.NumSet1();
+            GameManager.instance.Btn9();
         }
         else if (gameObject.CompareTag("targetPlus"))
         {
