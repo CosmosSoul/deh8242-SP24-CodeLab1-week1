@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public int num1 = 0;
     public int num2 = 0;
     public int targetNum;
+    public int clickNum;
+    public string operation;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -105,118 +108,26 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void GetNum1()
+    public void NumSet1()
     {
-        inputText.text = "Click your first number!";
+        num1 = clickNum;
+    }
 
-       void OnMouseDown()
+    public void NumSet2()
     {
-        
-        if (gameObject.CompareTag("clear"))
-        {
-            Debug.Log("You cleared the board but you lost points! 😬");
-            GameManager.instance.score -= 5;
-        }
-        
-        else if (gameObject.CompareTag("calculate"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you calculated");
-            
-        }
-        else if (gameObject.CompareTag("target1"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked one");
-            num1 = 1;
-            
-        }
-        else if (gameObject.CompareTag("target2"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked two");
-            num1 = 2;
-        }
-        else if (gameObject.CompareTag("target3"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked three");
-            num1 = 3;
-        }
-        else if (gameObject.CompareTag("target4"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked four");
-            score++;
-        }
-        else if (gameObject.CompareTag("target5"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked five");
-            score++;
-        }
-        else if (gameObject.CompareTag("target6"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked six");
-            score++;
-        }
-        else if (gameObject.CompareTag("target7"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked seven");
-            score++;
-        }
-        else if (gameObject.CompareTag("target8"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked eight");
-            score++;
-        }
-        else if (gameObject.CompareTag("target9"))
-        {
-            Destroy(gameObject);
-            Debug.Log("you clicked nine");
-            score++;
-        }
-        else if (gameObject.CompareTag("targetPlus"))
-        {
-             Destroy(gameObject);
-             Debug.Log("you clicked plus");
-             score++;
-        }
-        else if (gameObject.CompareTag("targetMinus"))
-        {
-             Destroy(gameObject);
-             Debug.Log("you clicked minus");
-             score++;
-        }
-        else if (gameObject.CompareTag("targetMultiply"))
-        {
-             Destroy(gameObject);
-             Debug.Log("you clicked multiply");
-             score++;
-        }
-        else if (gameObject.CompareTag("targetDivide"))
-        {
-             Destroy(gameObject);
-             Debug.Log("you clicked divide");
-             score++;
-        }
+        num2 = clickNum;
+    }
+   /* public void GetNum1()
+    {
+        Debug.Log("GetNum1 Function CALL!");
 
-        // string tag = gameObject.tag;
-        /*
-        switch (gameObject.CompareTag(c))
-        {
-            case 'target0':
-                Debug.Log("You clicked a 0");
-                break;
-                
-        }
-        */
+        clickAction.instance.OnMouseDown();
+
+        num1 = clickNum;
+        
         
     }
-    }
+    */
     public int Score
     {
         get
@@ -296,9 +207,29 @@ public class GameManager : MonoBehaviour
         timer += Time.deltaTime;
         scoreText.text = "Score: " + Score + "\nTime: " + timer;
 
-        inputText.text = "Your input: " + num1 + num2;
-        //inputText.text = 
-           
+        //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
+
+        //inputText.text;
+    }
+
+    public void Btn1()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "1";
+        }
+        else
+        {
+            inputText.text += "1";
+        }
+    }
+
+    public void Addtion()
+    {
+        num1 = int.Parse(inputText.text);
+        operation = "+";
+        inputText.text = "";
+
     }
     
     

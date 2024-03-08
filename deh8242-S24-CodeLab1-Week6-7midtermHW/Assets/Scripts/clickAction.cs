@@ -7,6 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class clickAction : MonoBehaviour
 {
+    public static clickAction instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -88,63 +89,63 @@ public class clickAction : MonoBehaviour
         else if (gameObject.CompareTag("target1"))
         {
             Destroy(gameObject);
-            Debug.Log("you clicked one");
-            GameManager.instance.num1 = 1;
+            //Debug.Log("you clicked one");
+            GameManager.instance.Btn1();
             
         }
         else if (gameObject.CompareTag("target2"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked two");
-            GameManager.instance.num1 = 2;
+            GameManager.instance.clickNum = 2;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target3"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked three");
-            GameManager.instance.num1 = 3;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target4"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked four");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target5"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked five");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target6"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked six");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target7"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked seven");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target8"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked eight");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("target9"))
         {
             Destroy(gameObject);
             Debug.Log("you clicked nine");
-            GameManager.instance.score++;
+            GameManager.instance.NumSet1();
         }
         else if (gameObject.CompareTag("targetPlus"))
         {
              Destroy(gameObject);
-             Debug.Log("you clicked plus");
-             GameManager.instance.score++;
+             GameManager.instance.Addtion();
         }
         else if (gameObject.CompareTag("targetMinus"))
         {
@@ -165,6 +166,8 @@ public class clickAction : MonoBehaviour
              GameManager.instance.score++;
         }
 
+        
+
         // string tag = gameObject.tag;
         /*
         switch (gameObject.CompareTag(c))
@@ -172,8 +175,10 @@ public class clickAction : MonoBehaviour
             case 'target0':
                 Debug.Log("You clicked a 0");
                 break;
-                
+
         }
         */
+
+
     }
 }
