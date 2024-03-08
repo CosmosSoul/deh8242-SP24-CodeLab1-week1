@@ -78,6 +78,7 @@ public class clickAction : MonoBehaviour
         {
             Debug.Log("You cleared the board but you lost points! 😬");
             GameManager.instance.score -= 5;
+            GameManager.instance.Clear();
         }
         
         else if (gameObject.CompareTag("calculate"))
@@ -151,34 +152,21 @@ public class clickAction : MonoBehaviour
         {
              Destroy(gameObject);
              Debug.Log("you clicked minus");
-             GameManager.instance.score++;
+             GameManager.instance.Subtract();
         }
         else if (gameObject.CompareTag("targetMultiply"))
         {
              Destroy(gameObject);
              Debug.Log("you clicked multiply");
-             GameManager.instance.score++;
+             GameManager.instance.Multiply();
         }
         else if (gameObject.CompareTag("targetDivide"))
         {
              Destroy(gameObject);
              Debug.Log("you clicked divide");
-             GameManager.instance.score++;
+             GameManager.instance.Divide();
         }
-
+     
         
-
-        // string tag = gameObject.tag;
-        /*
-        switch (gameObject.CompareTag(c))
-        {
-            case 'target0':
-                Debug.Log("You clicked a 0");
-                break;
-
-        }
-        */
-
-
     }
 }

@@ -46,7 +46,7 @@ public class ASCIILevelLoader : MonoBehaviour
         
     }
 
-    void LoadLevel()
+    public void LoadLevel()
     {
         Destroy(level);
 

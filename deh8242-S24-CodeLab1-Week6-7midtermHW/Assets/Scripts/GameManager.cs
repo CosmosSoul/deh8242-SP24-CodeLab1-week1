@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using File = System.IO.File;
 
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
         }
         
     }
+    
+    
 
     public void Calculate()
     {
@@ -93,41 +96,19 @@ public class GameManager : MonoBehaviour
                 break;
             case "-":
                 calculation = num1 - num2;
+                inputText.text = calculation.ToString();
                 break;
             case "*":
                 calculation = num1 * num2;
+                inputText.text = calculation.ToString();
                 break;
             case "/":
                 calculation = num1 / num2;
+                inputText.text = calculation.ToString();
                 break;
         }
-
-        
-
-
-
     }
-
-    public void NumSet1()
-    {
-        num1 = clickNum;
-    }
-
-    public void NumSet2()
-    {
-        num2 = clickNum;
-    }
-   /* public void GetNum1()
-    {
-        Debug.Log("GetNum1 Function CALL!");
-
-        clickAction.instance.OnMouseDown();
-
-        num1 = clickNum;
-        
-        
-    }
-    */
+    
     public int Score
     {
         get
@@ -327,6 +308,37 @@ public class GameManager : MonoBehaviour
         operation = "+";
         inputText.text = "";
 
+    }
+    
+    public void Subtract()
+    {
+        num1 = int.Parse(inputText.text);
+        operation = "-";
+        inputText.text = "";
+
+    }
+    
+    public void Multiply()
+    {
+        num1 = int.Parse(inputText.text);
+        operation = "*";
+        inputText.text = "";
+
+    }
+    
+    public void Divide()
+    {
+        num1 = int.Parse(inputText.text);
+        operation = "/";
+        inputText.text = "";
+
+    }
+
+    public void Clear()
+    {
+        num1 = 0;
+        num2 = 0;
+        SceneManager.LoadScene(0);
     }
     
 }
