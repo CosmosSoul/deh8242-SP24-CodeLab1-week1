@@ -7,10 +7,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using File = System.IO.File;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField]
+    private ASCIILevelLoader _asciiLevelLoader;
 
     public int score;
     private int highScore = 0;
@@ -36,6 +39,8 @@ public class GameManager : MonoBehaviour
     public float gameTime;
 
     public string highScoresString = "";
+
+    
     
     
     private List<int> highScores;
@@ -107,6 +112,12 @@ public class GameManager : MonoBehaviour
                 inputText.text = calculation.ToString();
                 break;
         }
+
+        if (calculation == targetNum)
+        {
+            score++;
+            _asciiLevelLoader.CurrentLevel++;
+        } 
     }
     
     public int Score
@@ -179,6 +190,7 @@ public class GameManager : MonoBehaviour
         //get relative application datapath, then append it to DATA_DIR and DATA_HS_FILE on the first frame
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         
+        RandomizeTargetNumber();
         
     }
 
@@ -298,8 +310,11 @@ public class GameManager : MonoBehaviour
             inputText.text += "9";
         }
     }
-    
-    
+
+    public void RandomizeTargetNumber()
+    {
+        targetNum = Random.Range(1, 99);
+    }
     
 
     public void Addtion()
@@ -338,7 +353,8 @@ public class GameManager : MonoBehaviour
     {
         num1 = 0;
         num2 = 0;
-        SceneManager.LoadScene(0);
+        inputText.text = "0";
+        _asciiLevelLoader.CurrentLevel+= 0;
     }
     
 }

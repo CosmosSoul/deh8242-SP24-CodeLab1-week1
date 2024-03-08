@@ -541,8 +541,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7d256094ac3df4b917e68ff0719c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _asciiLevelLoader: {fileID: 869282844}
   score: 0
   calculation: 0
+  num1: 0
+  num2: 0
+  targetNum: 0
+  clickNum: 0
+  operation: 
   scoreText: {fileID: 1840955785}
   gameOverText: {fileID: 1669871587}
   inputText: {fileID: 98982451}
