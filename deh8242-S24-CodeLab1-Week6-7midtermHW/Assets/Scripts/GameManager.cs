@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     private string DATA_FULL_HS_FILE_PATH;
 
     private float timer = 0;
+    [SerializeField]
     public int maxTime = 30;
     public float gameTime;
 
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
 
         if (calculation == targetNum)
         {
+            inputText.text = "";
             score++;
             _asciiLevelLoader.CurrentLevel++;
         } 
@@ -197,14 +199,36 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        scoreText.text = "Score: " + Score + "\nTime: " + timer;
+  
 
+        if (!gameOver)
+        {
+            timer += Time.deltaTime;
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)timer;
+        }
+        else
+        {
+            gameOverText.gameObject.SetActive(true);
+            scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
+                             "\nThe high scores are: " + highScoresString;
+        }
         //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
 
         //inputText.text;
+        
+        
     }
-
+    public void Btn0()
+    {
+        if (inputText.text == Convert.ToString("0"))
+        {
+            inputText.text = "0";
+        }
+        else
+        {
+            inputText.text += "0";
+        }
+    }
     public void Btn1()
     {
         if (inputText.text == Convert.ToString("0"))
@@ -317,7 +341,7 @@ public class GameManager : MonoBehaviour
     }
     
 
-    public void Addtion()
+    public void Addition()
     {
         num1 = int.Parse(inputText.text);
         operation = "+";

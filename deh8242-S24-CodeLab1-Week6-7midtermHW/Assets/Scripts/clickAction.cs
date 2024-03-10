@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class clickAction : MonoBehaviour
 {
-    public static clickAction instance;
+    //public static clickAction instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +87,13 @@ public class clickAction : MonoBehaviour
             Debug.Log("you calculated");
             GameManager.instance.Calculate();
         }
+        else if (gameObject.CompareTag("target0"))
+        {
+            Destroy(gameObject);
+            //Debug.Log("you clicked one");
+            GameManager.instance.Btn0();
+            
+        }
         else if (gameObject.CompareTag("target1"))
         {
             Destroy(gameObject);
@@ -146,7 +153,7 @@ public class clickAction : MonoBehaviour
         else if (gameObject.CompareTag("targetPlus"))
         {
              Destroy(gameObject);
-             GameManager.instance.Addtion();
+             GameManager.instance.Addition();
         }
         else if (gameObject.CompareTag("targetMinus"))
         {
