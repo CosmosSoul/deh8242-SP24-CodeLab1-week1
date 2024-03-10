@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI inputText;
+    public TextMeshProUGUI targetNumText;
 
     public bool gameOver;
 
@@ -203,6 +204,7 @@ public class GameManager : MonoBehaviour
 
         if (!gameOver)
         {
+            targetNumText.text = "Your target is: " + targetNum;
             timer += Time.deltaTime;
             scoreText.text = "Score: " + Score + "\nTime: " + (int)timer;
         }
