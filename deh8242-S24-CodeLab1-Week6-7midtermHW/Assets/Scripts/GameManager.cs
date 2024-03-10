@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private ASCIILevelLoader _asciiLevelLoader;
 
-    public int score;
+    public int score = 0;
     private int highScore = 0;
     public int calculation;
     public int num1 = 0;
@@ -43,7 +43,50 @@ public class GameManager : MonoBehaviour
     public string highScoresString = "";
 
     
-    
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+        set
+        {
+            score = value;
+            Debug.Log("Score update!");
+            
+
+            
+            if (isHighScore(score))
+            {
+                //placeholder is set to -1 for highScoreSlot
+                int highScoreSlot = -1;
+                for (int i = 0; i < HighScores.Count; i++)
+                {
+                    //if the game score is greater than the current highScore in the array highScoreSlot placeholder get an updated assignment to i
+                    if (score > highScores[i])
+                    {
+                        highScoreSlot = i;
+                        break;
+                    }
+                }
+
+                //whatever the confirmed score is in highScoreSlot is inserted at the highScoreSlot position and set within a range of 0-5 
+                highScores.Insert(highScoreSlot, score);
+                highScores = highScores.GetRange(0, 7);
+
+                string scoreBoardText = "";
+
+                foreach (var highScore in highScores)
+                {
+                    scoreBoardText += highScore + "\n";
+                }
+
+                highScoresString = scoreBoardText;
+
+                File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
+            }
+        }
+    }
     
     private List<int> highScores;
 
@@ -78,7 +121,7 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < highScoresArray.Length; i++)
                 {
-                    int currentScore = int.Parse(highScoresArray[i]);
+                    int currentScore = Int32.Parse(highScoresArray[i]);
                     highScores.Add(currentScore);
                 }
             }
@@ -119,51 +162,9 @@ public class GameManager : MonoBehaviour
         {
             inputText.text = "";
             score++;
-            _asciiLevelLoader.CurrentLevel++;
+            RandomizeTargetNumberEasy();
+            //_asciiLevelLoader.CurrentLevel++;
         } 
-    }
-    
-    public int Score
-    {
-        get
-        {
-            return score;
-        }
-        set
-        {
-            score = value;
-
-            //
-            if (isHighScore(score))
-            {
-                //placeholder is set to -1 for highScoreSlot
-                int highScoreSlot = -1;
-                for (int i = 0; i < HighScores.Count; i++)
-                {
-                    //if the game score is greater than the current highScore in the array highScoreSlot placeholder get an updated assignment to i
-                    if (score > highScores[i])
-                    {
-                        highScoreSlot = i;
-                        break;
-                    }
-                }
-
-                //whatever the confirmed score is in highScoreSlot is inserted at the highScoreSlot position and set within a range of 0-5 
-                highScores.Insert(highScoreSlot, score);
-                highScores = highScores.GetRange(0, 5);
-
-                string scoreBoardText = "";
-
-                foreach (var highScore in highScores)
-                {
-                    scoreBoardText += highScore + "\n";
-                }
-
-                highScoresString = scoreBoardText;
-
-                File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
-            }
-        }
     }
 
     //setting gameManager to be a singleton that will persist between scenes and level, so score and time tracking remains consistent
@@ -193,8 +194,10 @@ public class GameManager : MonoBehaviour
         //get relative application datapath, then append it to DATA_DIR and DATA_HS_FILE on the first frame
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         
-        RandomizeTargetNumber();
-        
+        RandomizeTargetNumberEasy();
+
+        //Debug.Log(highScoresString + "okay");
+
     }
 
     // Update is called once per frame
@@ -206,7 +209,7 @@ public class GameManager : MonoBehaviour
         {
             targetNumText.text = "Your target is: " + targetNum;
             timer += Time.deltaTime;
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)timer;
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)timer + "\nhs: " + highScoresString;
         }
         else
         {
@@ -337,12 +340,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RandomizeTargetNumber()
+    public void RandomizeTargetNumberEasy()
     {
         targetNum = Random.Range(1, 99);
     }
     
+    public void RandomizeTargetNumberMedium()
+    {
+        targetNum = Random.Range(1, 500);
+    }
 
+    public void RandomizeTargetNumberHard()
+    {
+        targetNum = Random.Range(1, 1000);
+    }
     public void Addition()
     {
         num1 = int.Parse(inputText.text);

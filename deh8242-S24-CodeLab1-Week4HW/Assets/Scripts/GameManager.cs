@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
         
          highScoresString = "1\n 1\n 1\n 1\n 1\n";
          File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
-         Debug.Log((highScoresString));
+         Debug.Log(highScoresString);
 
         }
         

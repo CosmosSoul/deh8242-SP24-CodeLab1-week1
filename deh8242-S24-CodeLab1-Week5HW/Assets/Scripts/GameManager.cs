@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private string DATA_FULL_HS_FILE_PATH;
 
     private float timer = 0;
-    public int maxTime = 30;
+    public int maxTime = 15;
     public float gameTime = 0;
     
     public int Score
@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
                 highScoresString = scoreBoardText;
                 
                 File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
-                
             }
         }
     }
