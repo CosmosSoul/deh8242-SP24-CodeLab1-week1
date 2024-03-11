@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private float timer = 0;
     [SerializeField]
-    public int maxTime = 30;
+    public float maxTime = 15f;
     public float gameTime;
 
     public string highScoresString = "";
@@ -203,13 +203,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+     
   
 
         if (!gameOver)
         {
             targetNumText.text = "Your target is: " + targetNum;
-            timer += Time.deltaTime;
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)timer + "\nhs: " + highScoresString;
+            maxTime -= Time.deltaTime;
+            if (maxTime <= 0f)
+            {
+                _asciiLevelLoader.CurrentLevel++;
+                maxTime = 20f;
+            }
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime;
         }
         else
         {
