@@ -689,7 +689,7 @@ MonoBehaviour:
   inputText: {fileID: 98982451}
   targetNumText: {fileID: 936978797}
   gameOver: 0
-  maxTime: 20
+  maxTime: 5
   gameTime: 0
   highScoresString: 
 --- !u!1 &1523166878

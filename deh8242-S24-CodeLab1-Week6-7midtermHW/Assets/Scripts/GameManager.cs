@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using File = System.IO.File;
+using Input = UnityEngine.Input;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI targetNumText;
 
     public bool gameOver;
+    public Color standardBackground;
 
     private const string DATA_DIR = "/Data/";
     private const string DATA_HS_FILE = "hs.txt";
@@ -193,7 +195,7 @@ public class GameManager : MonoBehaviour
         
         //get relative application datapath, then append it to DATA_DIR and DATA_HS_FILE on the first frame
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
-        
+        standardBackground = Camera.main.backgroundColor;
         RandomizeTargetNumberEasy();
 
         //Debug.Log(highScoresString + "okay");
@@ -203,10 +205,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-     
-  
-
         if (!gameOver)
         {
             targetNumText.text = "Your target is: " + targetNum;
@@ -214,21 +212,34 @@ public class GameManager : MonoBehaviour
             if (maxTime <= 0f)
             {
                 _asciiLevelLoader.CurrentLevel++;
-                maxTime = 20f;
+                maxTime = 10f;
             }
             scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime;
         }
-        else
+        
+        if(_asciiLevelLoader.CurrentLevel == 4)
         {
+            gameOver = true;
+            Camera.main.backgroundColor = Color.red;
             gameOverText.gameObject.SetActive(true);
             scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
                              "\nThe high scores are: " + highScoresString;
         }
         //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
-
         //inputText.text;
+
+        if (gameOver && Input.GetKeyDown(KeyCode.Return))
+        {
+            _asciiLevelLoader.CurrentLevel = 0;
+            gameOverText.gameObject.SetActive(false);
+            Score = 0;
+            maxTime = 10f;
+            Camera.main.backgroundColor = standardBackground;
+            gameOver = false;
+            _asciiLevelLoader.LoadLevel();
+        }
         
-        
+        //ADD restart functionality here!
     }
     public void Btn0()
     {
