@@ -89,6 +89,12 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void ReadTextInput(string name)
+    {
+        string playerName = name;
+        Debug.Log(playerName);
+    }
     
     private List<int> highScores;
 
@@ -197,7 +203,7 @@ public class GameManager : MonoBehaviour
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         standardBackground = Camera.main.backgroundColor;
         RandomizeTargetNumberEasy();
-
+        ReadTextInput(name);
         //Debug.Log(highScoresString + "okay");
 
     }
@@ -205,7 +211,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameOver)
+        if (!gameOver && _asciiLevelLoader.CurrentLevel <= 4)
         {
             targetNumText.text = "Your target is: " + targetNum;
             maxTime -= Time.deltaTime;
@@ -214,16 +220,16 @@ public class GameManager : MonoBehaviour
                 _asciiLevelLoader.CurrentLevel++;
                 maxTime = 10f;
             }
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime;
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + _asciiLevelLoader.CurrentLevel;
         }
         
-        if(_asciiLevelLoader.CurrentLevel == 4)
+        else
         {
             gameOver = true;
             Camera.main.backgroundColor = Color.red;
             gameOverText.gameObject.SetActive(true);
-            scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score + "\nYour total time was: " + gameTime +
-                             "\nThe high scores are: " + highScoresString;
+            scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score  +
+                             "\nThe high scores are: \n" + highScoresString;
         }
         //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
         //inputText.text;
@@ -239,7 +245,6 @@ public class GameManager : MonoBehaviour
             _asciiLevelLoader.LoadLevel();
         }
         
-        //ADD restart functionality here!
     }
     public void Btn0()
     {
