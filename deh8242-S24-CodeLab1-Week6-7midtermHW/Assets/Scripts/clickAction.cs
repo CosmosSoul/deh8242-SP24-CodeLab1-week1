@@ -11,7 +11,7 @@ public class clickAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.Score++;
+        //GameManager.instance.Score++;
     }
 
     // Update is called once per frame
@@ -77,7 +77,7 @@ public class clickAction : MonoBehaviour
         if (gameObject.CompareTag("clear"))
         {
             Debug.Log("You cleared the board but you lost points! 😬");
-            GameManager.instance.score -= 1;
+            GameManager.instance.Score -= 1;
             GameManager.instance.Clear();
         }
         

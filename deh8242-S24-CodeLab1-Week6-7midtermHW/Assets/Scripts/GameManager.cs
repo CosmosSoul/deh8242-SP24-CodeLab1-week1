@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
         if (calculation == targetNum)
         {
             inputText.text = "";
-            score++;
+            Score++;
             RandomizeTargetNumberEasy();
             //_asciiLevelLoader.CurrentLevel++;
         } 
