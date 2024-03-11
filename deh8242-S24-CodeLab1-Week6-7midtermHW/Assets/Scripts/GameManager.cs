@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Windows;
 using File = System.IO.File;
 using Input = UnityEngine.Input;
@@ -22,13 +23,14 @@ public class GameManager : MonoBehaviour
     public int num1 = 0;
     public int num2 = 0;
     public int targetNum;
-    public int clickNum;
     public string operation;
+    public string playerNameData;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI inputText;
     public TextMeshProUGUI targetNumText;
+    public InputField playerNameInput;
 
     public bool gameOver;
     public Color standardBackground;
@@ -89,13 +91,27 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    public void ReadTextInput(string name)
+    /*
+    public void ReadTextInput()
     {
-        string playerName = name;
-        Debug.Log(playerName);
+        foreach (char c in Input.inputString)
+        {
+            if ((c == '\n') || (c == '\r'))
+            {
+                print("Player has entered their name: " + playerName.text);
+            }
+            else
+            {
+                playerName.text += c;
+            }
+
+            //playerName = inputField.text;
+            //Debug.Log(playerName);
+        }
     }
-    
+    */
+
+
     private List<int> highScores;
 
     //isHighScore function iterates through highScores array and returns true if one of the current game score is higher than any of the scores on the list 
@@ -196,6 +212,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        playerNameData = playerNameInput.text;
         //make sure gameOverText does not display on Start
         gameOverText.gameObject.SetActive(false);
         
@@ -203,7 +221,7 @@ public class GameManager : MonoBehaviour
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         standardBackground = Camera.main.backgroundColor;
         RandomizeTargetNumberEasy();
-        ReadTextInput(name);
+
         //Debug.Log(highScoresString + "okay");
 
     }
@@ -211,12 +229,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!gameOver && _asciiLevelLoader.CurrentLevel <= 4)
         {
             targetNumText.text = "Your target is: " + targetNum;
             maxTime -= Time.deltaTime;
             if (maxTime <= 0f)
             {
+                Debug.Log(playerNameInput.text);
                 _asciiLevelLoader.CurrentLevel++;
                 maxTime = 10f;
             }

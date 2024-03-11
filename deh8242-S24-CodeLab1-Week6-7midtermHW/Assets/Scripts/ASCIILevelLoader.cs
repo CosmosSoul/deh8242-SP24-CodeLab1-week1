@@ -36,8 +36,8 @@ public class ASCIILevelLoader : MonoBehaviour
         instance = this;
 
         FILE_PATH = Application.dataPath + "/Levels/LevelNum.txt";
-        
-        LoadLevel();
+        //GameManager.instance.playerName.text;
+        //LoadLevel();
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class ASCIILevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
+        
         Destroy(level);
 
         level = new GameObject("Level Components");
