@@ -83,93 +83,93 @@ public class clickAction : MonoBehaviour
         
         else if (gameObject.CompareTag("calculate"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("you calculated");
             GameManager.instance.Calculate();
         }
         else if (gameObject.CompareTag("target0"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //Debug.Log("you clicked one");
             GameManager.instance.Btn0();
             
         }
         else if (gameObject.CompareTag("target1"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             //Debug.Log("you clicked one");
             GameManager.instance.Btn1();
             
         }
         else if (gameObject.CompareTag("target2"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("you clicked two");
            //GameManager.instance.clickNum = 2;
             GameManager.instance.Btn2();
         }
         else if (gameObject.CompareTag("target3"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             Debug.Log("you clicked three");
             GameManager.instance.Btn3();
         }
         else if (gameObject.CompareTag("target4"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("you clicked four");
             GameManager.instance.Btn4();
         }
         else if (gameObject.CompareTag("target5"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("you clicked five");
             GameManager.instance.Btn5();
         }
         else if (gameObject.CompareTag("target6"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             Debug.Log("you clicked six");
             GameManager.instance.Btn6();
         }
         else if (gameObject.CompareTag("target7"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             Debug.Log("you clicked seven");
             GameManager.instance.Btn7();
         }
         else if (gameObject.CompareTag("target8"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Debug.Log("you clicked eight");
             GameManager.instance.Btn8();
         }
         else if (gameObject.CompareTag("target9"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             Debug.Log("you clicked nine");
             GameManager.instance.Btn9();
         }
         else if (gameObject.CompareTag("targetPlus"))
         {
-             Destroy(gameObject);
+            // Destroy(gameObject);
              GameManager.instance.Addition();
         }
         else if (gameObject.CompareTag("targetMinus"))
         {
-             Destroy(gameObject);
+            // Destroy(gameObject);
              Debug.Log("you clicked minus");
              GameManager.instance.Subtract();
         }
         else if (gameObject.CompareTag("targetMultiply"))
         {
-             Destroy(gameObject);
+             //Destroy(gameObject);
              Debug.Log("you clicked multiply");
              GameManager.instance.Multiply();
         }
         else if (gameObject.CompareTag("targetDivide"))
         {
-             Destroy(gameObject);
+             //Destroy(gameObject);
              Debug.Log("you clicked divide");
              GameManager.instance.Divide();
         }

@@ -1,8 +1,7 @@
-BBBBBBBBBBBBBBBB
-B--------------b
-B---------0----b
-B---G----------b
-B--------------B
-B---0------G---B
-B--------------B
-BbBbbbbbbbbbbbbb
+BBBBBBBBBBBBBBBBbBbbbbbbbbbbbbbbbb
+B---3-3------3----3------3------b
+B--3---3-----------------3-----b
+B---------3-3--------3----3--B
+B---3-----3-----3--------3-----B
+B---------------------3--------B
+BbBbbbbbbbbbbbbbbBbbbbbbbbbbbbbbbb
