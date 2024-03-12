@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI inputText;
     public TextMeshProUGUI targetNumText;
     public InputField playerNameInput;
+    public Button startButton;
 
     public bool gameOver;
     public bool timerOn;
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
 
                 foreach (var highScore in highScores)
                 {
-                    scoreBoardText += highScore + "\n";
+                    scoreBoardText += (playerNameData + "  " + highScore + "\n");
                 }
 
                 highScoresString = scoreBoardText;
@@ -216,7 +217,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         //gameOver = true;
         //make sure gameOverText does not display on Start
         gameOverText.gameObject.SetActive(false);
@@ -249,7 +250,7 @@ public class GameManager : MonoBehaviour
                 _asciiLevelLoader.CurrentLevel++;
                 maxTime = 10f;
             }
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + _asciiLevelLoader.CurrentLevel+1;
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + (_asciiLevelLoader.CurrentLevel + 1);
         }
         
         else
@@ -266,6 +267,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOver && Input.GetKeyDown(KeyCode.Return))
         {
+            
             _asciiLevelLoader.CurrentLevel = 0;
             gameOverText.gameObject.SetActive(false);
             Score = 0;

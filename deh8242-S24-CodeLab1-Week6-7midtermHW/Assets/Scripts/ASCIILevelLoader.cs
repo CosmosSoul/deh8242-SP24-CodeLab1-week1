@@ -48,6 +48,7 @@ public class ASCIILevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
+        GameManager.instance.startButton.gameObject.SetActive(false);
         GameManager.instance.playerNameInput.gameObject.SetActive(false);
         GameManager.instance.timerOn = true;
         GameManager.instance.playerNameData = GameManager.instance.playerNameInput.text;
