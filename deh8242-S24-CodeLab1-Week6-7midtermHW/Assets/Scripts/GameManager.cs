@@ -41,9 +41,9 @@ public class GameManager : MonoBehaviour
     private const string DATA_HS_FILE = "hs.txt";
     private string DATA_FULL_HS_FILE_PATH;
 
-    private float timer = 0;
+    private float timer = 30;
     [SerializeField]
-    public float maxTime = 15f;
+    public float maxTime = 30f;
     public float gameTime;
 
     public string highScoresString = "";
@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour
 
                 foreach (var highScore in highScores)
                 {
-                    scoreBoardText += (playerNameData + "   " + highScore + "\n");
+                    //scoreBoardText += (playerNameData + "   " + highScore + "\n");
+                    scoreBoardText += (highScore + "\n");
                 }
 
                 highScoresString = scoreBoardText;
@@ -247,7 +248,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log(playerNameInput.text);
                 _asciiLevelLoader.CurrentLevel++;
-                maxTime = 2f;
+                maxTime = 30f;
             }
         }
 

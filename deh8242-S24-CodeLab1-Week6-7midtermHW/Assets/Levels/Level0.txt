@@ -2,6 +2,6 @@ BBBBBBBBBBBBBBBBbBbbbbbbbbbbbbbbbb
 B----------7   8   9-------------b
 B----------4   5   6-------------b
 B---pp-----3   2   1-------ss----B
-B---pp---ddd---0----mmm----ss----B
+B---pp--dddd---0----mmmm---ss----B
 B---CC------CC----EE-------EE----B
 BbBbbbbbbbbbbbbbbBbbbbbbbbbbbbbbbb

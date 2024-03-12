@@ -77,7 +77,7 @@ public class clickAction : MonoBehaviour
         if (gameObject.CompareTag("clear"))
         {
             Debug.Log("You cleared the board but you lost points! 😬");
-            //GameManager.instance.Score -= 1;
+            GameManager.instance.Score -= 1;
             GameManager.instance.Clear();
         }
         
