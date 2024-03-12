@@ -33,8 +33,8 @@ public class ASCIILevelLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-
+        //instance = this;
+        //GameManager.instance.gameOn = false;
         FILE_PATH = Application.dataPath + "/Levels/LevelNum.txt";
         //GameManager.instance.playerName.text;
         //LoadLevel();
@@ -48,7 +48,10 @@ public class ASCIILevelLoader : MonoBehaviour
 
     public void LoadLevel()
     {
-        
+        GameManager.instance.playerNameInput.gameObject.SetActive(false);
+        GameManager.instance.timerOn = true;
+        GameManager.instance.playerNameData = GameManager.instance.playerNameInput.text;
+        Debug.Log(GameManager.instance.playerNameData);
         Destroy(level);
 
         level = new GameObject("Level Components");

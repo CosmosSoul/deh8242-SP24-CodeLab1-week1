@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public InputField playerNameInput;
 
     public bool gameOver;
+    public bool timerOn;
     public Color standardBackground;
 
     private const string DATA_DIR = "/Data/";
@@ -206,14 +207,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void StartGame()
+    {
+        
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
 
-        playerNameData = playerNameInput.text;
+        //gameOver = true;
         //make sure gameOverText does not display on Start
         gameOverText.gameObject.SetActive(false);
         
@@ -233,18 +237,24 @@ public class GameManager : MonoBehaviour
         if (!gameOver && _asciiLevelLoader.CurrentLevel <= 4)
         {
             targetNumText.text = "Your target is: " + targetNum;
-            maxTime -= Time.deltaTime;
+            
+            if (timerOn)
+            {
+                maxTime -= Time.deltaTime;
+            }
+
             if (maxTime <= 0f)
             {
                 Debug.Log(playerNameInput.text);
                 _asciiLevelLoader.CurrentLevel++;
                 maxTime = 10f;
             }
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + _asciiLevelLoader.CurrentLevel;
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + _asciiLevelLoader.CurrentLevel+1;
         }
         
         else
         {
+            timerOn = false;
             gameOver = true;
             Camera.main.backgroundColor = Color.red;
             gameOverText.gameObject.SetActive(true);
