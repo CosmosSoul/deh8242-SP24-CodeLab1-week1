@@ -1,8 +1,7 @@
-BBBBBBBBBBBBBBBB
-B--------------b
-B---------1----b
-B---1----------b
-B--------------B
-B---1------1---B
-B--------------B
-BbBbbbbbbbbbbbbb
+BBBBBBBBBBBBBBBBbBbbbbbbbbbbbbbbbb
+B---123-----   456------789------b
+B---123-----   456------789------b
+B------ PPP----000---SSS---------B
+B--------mm----------MM----------B
+B------cc--------------ee--------B
+BbBbbbbbbbbbbbbbbBbbbbbbbbbbbbbbbb

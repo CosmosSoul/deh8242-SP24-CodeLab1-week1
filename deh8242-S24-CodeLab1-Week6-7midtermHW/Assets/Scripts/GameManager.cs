@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
                 foreach (var highScore in highScores)
                 {
-                    scoreBoardText += (highScore + "\n");
+                    scoreBoardText += (playerNameData + "   " + highScore + "\n");
                 }
 
                 highScoresString = scoreBoardText;
