@@ -48,22 +48,22 @@ public class GameManager : MonoBehaviour
 
     public string highScoresString = "";
 
-    
+
     public int Score
     {
-        get
-        {
-            return score;
-        }
+        get { return score; }
         set
         {
             score = value;
             Debug.Log("Score update!");
-            
+        }
+    }
 
-            
-            if (isHighScore(score))
-            {
+    void SetHighScore()
+    {
+        if (isHighScore(score))
+        {
+
                 //placeholder is set to -1 for highScoreSlot
                 int highScoreSlot = -1;
                 for (int i = 0; i < HighScores.Count; i++)
@@ -84,15 +84,16 @@ public class GameManager : MonoBehaviour
 
                 foreach (var highScore in highScores)
                 {
-                    scoreBoardText += (playerNameData + "  " + highScore + "\n");
+                    scoreBoardText += (highScore + "\n");
                 }
 
                 highScoresString = scoreBoardText;
 
                 File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoresString);
-            }
         }
     }
+    
+
     /*
     public void ReadTextInput()
     {
@@ -255,6 +256,7 @@ public class GameManager : MonoBehaviour
         
         else
         {
+            
             timerOn = false;
             gameOver = true;
             Camera.main.backgroundColor = Color.red;
@@ -265,7 +267,13 @@ public class GameManager : MonoBehaviour
         //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
         //inputText.text;
 
-        if (gameOver && Input.GetKeyDown(KeyCode.Return))
+        if (gameOver)
+        {
+            SetHighScore();
+            gameOver = false;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             
             _asciiLevelLoader.CurrentLevel = 0;
@@ -274,6 +282,7 @@ public class GameManager : MonoBehaviour
             maxTime = 10f;
             Camera.main.backgroundColor = standardBackground;
             gameOver = false;
+            SceneManager.LoadScene(0);
             _asciiLevelLoader.LoadLevel();
         }
         
