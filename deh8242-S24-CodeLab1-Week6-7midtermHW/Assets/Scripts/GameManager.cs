@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public Button startButton;
 
     public bool gameOver;
-    public bool timerOn;
+    public bool timerOn = false;
     public Color standardBackground;
 
     private const string DATA_DIR = "/Data/";
@@ -236,44 +236,50 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        if (!gameOver && _asciiLevelLoader.CurrentLevel <= 4)
+        if (!gameOver)
         {
             targetNumText.text = "Your target is: " + targetNum;
+            if (timerOn) {maxTime -= Time.deltaTime;}
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " +
+                             (_asciiLevelLoader.CurrentLevel + 1);
             
-            if (timerOn)
-            {
-                maxTime -= Time.deltaTime;
-            }
-
             if (maxTime <= 0f)
             {
                 Debug.Log(playerNameInput.text);
                 _asciiLevelLoader.CurrentLevel++;
-                maxTime = 10f;
+                maxTime = 2f;
             }
-            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + (_asciiLevelLoader.CurrentLevel + 1);
         }
-        
+
         else
         {
-            
-            timerOn = false;
-            gameOver = true;
+            scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score + "\nThe high scores are: \n" + highScoresString;
+        }
+        
+        if (!gameOver && _asciiLevelLoader.CurrentLevel == 5)
+        {
+        
             Camera.main.backgroundColor = Color.red;
             gameOverText.gameObject.SetActive(true);
-            scoreText.text = "Game Over! 🤣" + "\nYour score is: " + Score  +
-                             "\nThe high scores are: \n" + highScoresString;
+            timerOn = false;
+            gameOver = true;
+            SetHighScore();
+            //return;
+            //gameOver = false;
         }
         //inputText.text = "Your first number is: " + num1 + "\n Your second number is: " +  num2;
         //inputText.text;
 
+       /*
         if (gameOver)
         {
             SetHighScore();
             gameOver = false;
         }
+        */
         
-        if (Input.GetKeyDown(KeyCode.Return))
+       /*
+        if (gameOver && Input.GetKeyDown(KeyCode.Return))
         {
             
             _asciiLevelLoader.CurrentLevel = 0;
@@ -285,6 +291,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
             _asciiLevelLoader.LoadLevel();
         }
+        */
         
     }
     public void Btn0()
