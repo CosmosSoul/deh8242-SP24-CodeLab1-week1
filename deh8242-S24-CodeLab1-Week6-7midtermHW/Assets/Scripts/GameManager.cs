@@ -248,7 +248,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log(playerNameInput.text);
                 _asciiLevelLoader.CurrentLevel++;
-                maxTime = 30f;
+                maxTime = 25f;
             }
         }
 
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
         
         if (!gameOver && _asciiLevelLoader.CurrentLevel == 5)
         {
-        
+            targetNumText.gameObject.SetActive(false);
             Camera.main.backgroundColor = Color.red;
             gameOverText.gameObject.SetActive(true);
             timerOn = false;
@@ -391,6 +391,8 @@ public class GameManager : MonoBehaviour
     }
     public void Btn8()
     {
+        
+        /*
         if (inputText.text == Convert.ToString("0"))
         {
             inputText.text = "8";
@@ -399,6 +401,7 @@ public class GameManager : MonoBehaviour
         {
             inputText.text += "8";
         }
+        */
     }
     public void Btn9()
     {
