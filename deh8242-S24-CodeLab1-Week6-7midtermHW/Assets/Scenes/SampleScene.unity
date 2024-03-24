@@ -1447,10 +1447,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json: 
-  simpleObjectJson: "    {\r\n        \"pos\":\r\n        {\r\n            \"x\":1,\r\n           
+  simpleObjectJson: "{\r\n        \"pos\":\r\n        {\r\n            \"x\":1,\r\n           
     \"y\":2,\r\n            \"z\":3,\r\n        },\r\n        \"rot\":\r\n       
     {\r\n            \"x\":90,\r\n            \"y\":45,\r\n            \"z\":0\r\n       
-    }\r\n    }"
+    }\r\n}"
 --- !u!212 &1794701439
 SpriteRenderer:
   m_ObjectHideFlags: 0
