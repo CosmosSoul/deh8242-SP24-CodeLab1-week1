@@ -35,7 +35,7 @@ public class JSONTest : MonoBehaviour
     }
 */
     // Start is called before the first frame update
-/*
+
     private void Awake()
     {
        // JSONNode transformNode = new JSONObject();
@@ -51,9 +51,9 @@ public class JSONTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // JSONNode transformNode = new JSONObject();
+         JSONNode transformNode = new JSONObject();
 
-        // JSONObject posObj = new JSONObject();
+         JSONObject posObj = new JSONObject();
     }
 
     public void ArrayOfObjectParsing()
@@ -83,5 +83,5 @@ public class JSONTest : MonoBehaviour
 
     }
     
-    */
+    
 }
