@@ -392,7 +392,7 @@ public class GameManager : MonoBehaviour
     public void Btn8()
     {
         
-        /*
+        
         if (inputText.text == Convert.ToString("0"))
         {
             inputText.text = "8";
@@ -401,7 +401,7 @@ public class GameManager : MonoBehaviour
         {
             inputText.text += "8";
         }
-        */
+        
     }
     public void Btn9()
     {
