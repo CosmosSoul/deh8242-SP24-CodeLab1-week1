@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locationDescriptionUI: {fileID: 1547611976}
-  currentLocation: {fileID: 11400000, guid: 6ec4f96081acc7e448a13a5df647df67, type: 2}
+  currentLocation: {fileID: 11400000, guid: b94c975fbcaf5af41857fce36d5d35cc, type: 2}
   buttonNorth: {fileID: 2107224478}
   buttonSouth: {fileID: 0}
   buttonEast: {fileID: 0}

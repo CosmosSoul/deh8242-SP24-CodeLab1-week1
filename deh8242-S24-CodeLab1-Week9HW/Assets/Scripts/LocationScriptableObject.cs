@@ -19,7 +19,7 @@ public class LocationScriptableObject : ScriptableObject
 
   public void PrintLocation()
   {
-    string printStr = "\nLocation Name: " + locationName + "\nLocation Description: " + locationDesc;
+    string printStr = "Location Name: " + locationName + "\nLocation Description: " + locationDesc;
     
     Debug.Log(printStr);
   }
