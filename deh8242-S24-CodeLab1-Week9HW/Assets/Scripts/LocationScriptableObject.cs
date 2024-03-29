@@ -14,6 +14,8 @@ public class LocationScriptableObject : ScriptableObject
   public LocationScriptableObject east;
   
   
+  
+  
 
   public void PrintLocation()
   {
