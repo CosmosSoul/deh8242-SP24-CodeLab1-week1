@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI locationDescriptionUI;
     public TextMeshProUGUI bossText;
-    public Image itemGet;
+    public GameObject itemGet;
 
     public LocationScriptableObject currentLocation;
     [FormerlySerializedAs("LocationsArray")] public LocationScriptableObject[] locationsArray;
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         currentLocation.PrintLocation();
         currentLocation.UpdateCurrentLocation(this);
         search.gameObject.SetActive(true);
+        itemGet.gameObject.SetActive(false);
 
     }
 
@@ -94,6 +95,8 @@ public class GameManager : MonoBehaviour
             locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
             bossEncounterOff();
             bossLocationChange();
+            hasItem = false;
+            itemGet.gameObject.SetActive(false);
         }
     } 
     
@@ -118,6 +121,8 @@ public class GameManager : MonoBehaviour
             locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
             bossEncounterOff();
             bossLocationChange();
+            hasItem = false;
+            itemGet.gameObject.SetActive(false);
         }
     }
     public void playP()
@@ -140,6 +145,8 @@ public class GameManager : MonoBehaviour
             locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
             bossEncounterOff();
             bossLocationChange();
+            hasItem = false;
+            itemGet.gameObject.SetActive(false);
         }
     }
     
@@ -154,6 +161,7 @@ public class GameManager : MonoBehaviour
         paper.gameObject.SetActive(true);
         scissors.gameObject.SetActive(true);
         bossText.gameObject.SetActive(true);
+        search.gameObject.SetActive(false);
         //bossText.text = "Boss: Oh hey, I was just looking for you!";
         
     }
@@ -185,6 +193,7 @@ public class GameManager : MonoBehaviour
         paper.gameObject.SetActive(false);
         scissors.gameObject.SetActive(false);
         bossText.gameObject.SetActive(false);
+        search.gameObject.SetActive(true);
     }
 
     public void searchArea()
@@ -204,11 +213,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasItem)
+        {
+            itemGet.gameObject.SetActive(true);
+        }
+        
         if (currentLocation == bossLocation && !metBoss)
         {
             bossText.text = "Boss: Heyyy, I was just looking for you!";
             bossEncounterOn();
-            metBoss = false; 
+            
             //metBoss = false;
 
             //WHY is this throwing an Error?!?
@@ -224,29 +238,32 @@ public class GameManager : MonoBehaviour
             Debug.Log("You made it out! Enjoy your weekend!");
         }
     }
-    
+
 
     public void MoveDir(string direction)
     {
-        switch (direction)
+        if (!metBoss)
         {
-            case "N":
-                currentLocation = currentLocation.north;
-                break;
-            case "S":
-                currentLocation = currentLocation.south;
-                break;
-            case "E":
-                currentLocation = currentLocation.east;
-                break;
-            case "W":
-                currentLocation = currentLocation.west;
-                break;
-            default:
-                Debug.Log("Invalid direction detected! Please try again");
-                break;
+            switch (direction)
+            {
+                case "N":
+                    currentLocation = currentLocation.north;
+                    break;
+                case "S":
+                    currentLocation = currentLocation.south;
+                    break;
+                case "E":
+                    currentLocation = currentLocation.east;
+                    break;
+                case "W":
+                    currentLocation = currentLocation.west;
+                    break;
+                default:
+                    Debug.Log("Invalid direction detected! Please try again");
+                    break;
+            }
+
+            currentLocation.UpdateCurrentLocation(this);
         }
-        
-        currentLocation.UpdateCurrentLocation(this);
     }
 }
