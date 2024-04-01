@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI locationDescriptionUI;
     public TextMeshProUGUI bossText;
+    public Image itemGet;
 
     public LocationScriptableObject currentLocation;
     [FormerlySerializedAs("LocationsArray")] public LocationScriptableObject[] locationsArray;
     public LocationScriptableObject bossLocation;
     public LocationScriptableObject itemLocation;
+    
      
 
     public Button buttonNorth;
@@ -74,59 +76,70 @@ public class GameManager : MonoBehaviour
 
     public void playS()
     {
+        bossText.text = "Heyyy, I was just looking for you!";
         if (bossHand == "Paper")
         {
-            bossText.text = "You're so smart. See you later!";
+            locationDescriptionUI.text = "Hmm, lucky you. See you later!";
+            //locationDescriptionUI.text = "Boss: You're starting to think like me! One more!";
             bossEncounterOff();
             bossLocationChange();
         }
         else if (bossHand == "Scissors")
         {
-            bossText.text = "Boss: You're starting to think like me! One more!";
+            locationDescriptionUI.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
         }
         else
         {
-            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            bossEncounterOff();
+            bossLocationChange();
         }
     } 
     
     public void playR()
     {
+        bossText.text = "Heyyy, I was just looking for you!";
         if (bossHand == "Scissors")
         {
-            bossText.text = "You're so smart. See you later!";
+            locationDescriptionUI.text = "Hmm, lucky you. See you later!";
             bossEncounterOff();
             bossLocationChange();
             
         }
         else if (bossHand == "Rock")
         {
-            bossText.text = "Boss: You're starting to think like me! One more!";
+            locationDescriptionUI.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
             
         }
         else
         {
-            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            bossEncounterOff();
+            bossLocationChange();
         }
     }
     public void playP()
     {
+        bossText.text = "Heyyy, I was just looking for you!";
         if (bossHand == "Rock")
         {
-            bossText.text = "You're so smart. See you later!";
+            locationDescriptionUI.text = "Hmm, lucky you. See you later!";
+           // locationDescriptionUI.text = "Hmm, lucky you. See you later!";
             bossEncounterOff();
             bossLocationChange();
         }
         else if (bossHand == "Paper")
         {
-            bossText.text = "Boss: You're starting to think like me! One more!";
+            locationDescriptionUI.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
         }
         else
         {
-            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            bossEncounterOff();
+            bossLocationChange();
         }
     }
     
@@ -141,7 +154,7 @@ public class GameManager : MonoBehaviour
         paper.gameObject.SetActive(true);
         scissors.gameObject.SetActive(true);
         bossText.gameObject.SetActive(true);
-        bossText.text = "Boss: Oh hey, I was just looking for you!";
+        //bossText.text = "Boss: Oh hey, I was just looking for you!";
         
     }
 
@@ -193,7 +206,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentLocation == bossLocation && !metBoss)
         {
-            
+            bossText.text = "Boss: Heyyy, I was just looking for you!";
             bossEncounterOn();
             metBoss = false; 
             //metBoss = false;
