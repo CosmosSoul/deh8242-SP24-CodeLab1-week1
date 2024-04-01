@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care of one more thing for me? \n You're great, thanks!";
             bossEncounterOff();
             bossLocationChange();
             hasItem = false;
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care of one more thing for me? \n You're great, thanks!";
             bossEncounterOff();
             bossLocationChange();
             hasItem = false;
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
+            locationDescriptionUI.text = "Boss: Ha! While you're here can you take care of one more thing for me? \n You're great, thanks!";
             bossEncounterOff();
             bossLocationChange();
             hasItem = false;
