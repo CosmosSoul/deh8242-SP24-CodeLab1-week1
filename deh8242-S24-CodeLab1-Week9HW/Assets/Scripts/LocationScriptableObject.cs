@@ -7,7 +7,8 @@ public class LocationScriptableObject : ScriptableObject
 {
   public string locationName;
   public string locationDesc;
-  public int hasPassport;
+  public int hasKeyItem;
+  
 
   public LocationScriptableObject north;
   public LocationScriptableObject south;
@@ -22,7 +23,7 @@ public class LocationScriptableObject : ScriptableObject
   {
     string printStr = "Location Name: " + locationName + "\nLocation Description: " + locationDesc;
     
-    Debug.Log(printStr);
+    //Debug.Log(printStr);
   }
 
   public void UpdateCurrentLocation(GameManager gm)
