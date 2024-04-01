@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public bool hasItem = false;
     public bool metBoss = false;
-    private string bossHand;
+    public string bossHand;
     
     
    
@@ -47,12 +47,14 @@ public class GameManager : MonoBehaviour
         bossEncounterOff();
         bossLocationChange();
         randomizeItemLocation();
+        randomizeBossHand();
         
         
         locationDescriptionUI.text = currentLocation.locationName + "\n" + currentLocation.locationDesc;
         currentLocation.PrintLocation();
         currentLocation.UpdateCurrentLocation(this);
-       
+        search.gameObject.SetActive(true);
+
     }
 
     public void bossLocationChange()
@@ -75,10 +77,12 @@ public class GameManager : MonoBehaviour
         if (bossHand == "Paper")
         {
             bossText.text = "You're so smart. See you later!";
+            bossEncounterOff();
         }
         else if (bossHand == "Scissors")
         {
             bossText.text = "Great minds think alike! One more!";
+            randomizeBossHand();
         }
         else
         {
@@ -91,10 +95,13 @@ public class GameManager : MonoBehaviour
         if (bossHand == "Scissors")
         {
             bossText.text = "You're so smart. See you later!";
+            bossEncounterOff();
+            
         }
         else if (bossHand == "Rock")
         {
             bossText.text = "Great minds think alike! One more!";
+            randomizeBossHand();
         }
         else
         {
@@ -106,10 +113,12 @@ public class GameManager : MonoBehaviour
         if (bossHand == "Rock")
         {
             bossText.text = "You're so smart. See you later!";
+            bossEncounterOff();
         }
         else if (bossHand == "Paper")
         {
             bossText.text = "Great minds think alike! One more!";
+            randomizeBossHand();
         }
         else
         {
@@ -129,7 +138,7 @@ public class GameManager : MonoBehaviour
         scissors.gameObject.SetActive(true);
         bossText.gameObject.SetActive(true);
         bossText.text = "Oh hey, I was just looking for you!";
-        randomizeBossHand();
+        
         
         
     }
@@ -150,13 +159,13 @@ public class GameManager : MonoBehaviour
                 bossHand = "Scissor";
                 break;
             default:
-                Debug.Log("uhh, what is that?");
+                Debug.Log("uhh, what is that?!");
                 break;
         }
     }
     public void bossEncounterOff()
     {
-        
+        metBoss = false;
         rock.gameObject.SetActive(false);
         paper.gameObject.SetActive(false);
         scissors.gameObject.SetActive(false);
@@ -168,6 +177,7 @@ public class GameManager : MonoBehaviour
         if (currentLocation == itemLocation)
         {
             hasItem = true;
+            locationDescriptionUI.text = "You've found what you were looking for!";
             Debug.Log("You've found it!");
         }
         else
@@ -181,25 +191,21 @@ public class GameManager : MonoBehaviour
     {
         if (currentLocation == bossLocation && !metBoss)
         {
-            metBoss = true;
+            
             bossEncounterOn();
+            metBoss = false; 
             //metBoss = false;
 
             //WHY is this throwing an Error?!?
             //int randomHand = Random.Range(0, 2);
         }
         
-        if (currentLocation == bossLocation && !gameOver)
-        {
-            //gameOver = true;
-            
-            Debug.Log("You have to work this weekend!");
-            //gameOver = false;
-        }
+  
 
         if (currentLocation == locationsArray[1] && hasItem)
         {
             gameOver = true;
+            locationDescriptionUI.text = "You made it out! Enjoy the weekend!";
             Debug.Log("You made it out! Enjoy your weekend!");
         }
     }

@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &101849989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568285436}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoveDir
-        m_Mode: 5
+        m_MethodName: playP
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &179184650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1548,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1028003115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2061,7 +2061,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 500.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547611976
 MonoBehaviour:
@@ -2083,7 +2083,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Here be the default description!
+  m_text: 'It''s Friday evening and you''ve forgotten something in the office, but
+    your boss might still be around ... '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2214,6 +2215,8 @@ MonoBehaviour:
   scissors: {fileID: 2103413762}
   gameOver: 0
   hasItem: 0
+  metBoss: 0
+  bossHand: 
 --- !u!4 &1568285437
 Transform:
   m_ObjectHideFlags: 0
@@ -2782,7 +2785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1769464946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2849,8 +2852,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568285436}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoveDir
-        m_Mode: 5
+        m_MethodName: playR
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3253,7 +3256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2103413761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3320,8 +3323,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568285436}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoveDir
-        m_Mode: 5
+        m_MethodName: playS
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
