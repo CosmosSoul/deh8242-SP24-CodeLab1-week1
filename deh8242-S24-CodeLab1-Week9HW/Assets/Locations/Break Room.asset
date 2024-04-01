@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b96fdd0959c978441b85ca92d3a9a055, type: 3}
-  m_Name: Home
+  m_Name: Break Room
   m_EditorClassIdentifier: 
-  locationName: Home Base
-  locationDesc: Where the head rests
+  locationName: Break Room
+  locationDesc: Take a load off, DON'T open the fridge
   hasPassport: 0
-  north: {fileID: 11400000, guid: b94c975fbcaf5af41857fce36d5d35cc, type: 2}
-  south: {fileID: 0}
+  north: {fileID: 0}
+  south: {fileID: 11400000, guid: f8a62e8f8200e5546bf0b0a1f39d1d7f, type: 2}
   west: {fileID: 0}
-  east: {fileID: 0}
+  east: {fileID: 11400000, guid: 6bbed15ba62938a43ba9bf26eb1773b5, type: 2}

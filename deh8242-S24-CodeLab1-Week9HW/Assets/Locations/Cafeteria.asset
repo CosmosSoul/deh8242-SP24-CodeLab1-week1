@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b96fdd0959c978441b85ca92d3a9a055, type: 3}
-  m_Name: Home
+  m_Name: Cafeteria
   m_EditorClassIdentifier: 
-  locationName: Home Base
-  locationDesc: Where the head rests
+  locationName: Cafeteria
+  locationDesc: Grab a bite
   hasPassport: 0
-  north: {fileID: 11400000, guid: b94c975fbcaf5af41857fce36d5d35cc, type: 2}
+  north: {fileID: 11400000, guid: fdf68e2e0f1aefd48be953a4c0c69891, type: 2}
   south: {fileID: 0}
-  west: {fileID: 0}
+  west: {fileID: 11400000, guid: 7a480352d5905c346844741b543536c1, type: 2}
   east: {fileID: 0}
