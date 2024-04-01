@@ -78,15 +78,16 @@ public class GameManager : MonoBehaviour
         {
             bossText.text = "You're so smart. See you later!";
             bossEncounterOff();
+            bossLocationChange();
         }
         else if (bossHand == "Scissors")
         {
-            bossText.text = "Great minds think alike! One more!";
+            bossText.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
         }
         else
         {
-            bossText.text = "I got you this time! Why don't come in this weekend";
+            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
         }
     } 
     
@@ -96,16 +97,18 @@ public class GameManager : MonoBehaviour
         {
             bossText.text = "You're so smart. See you later!";
             bossEncounterOff();
+            bossLocationChange();
             
         }
         else if (bossHand == "Rock")
         {
-            bossText.text = "Great minds think alike! One more!";
+            bossText.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
+            
         }
         else
         {
-            bossText.text = "I got you this time! Why don't come in this weekend";
+            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
         }
     }
     public void playP()
@@ -114,15 +117,16 @@ public class GameManager : MonoBehaviour
         {
             bossText.text = "You're so smart. See you later!";
             bossEncounterOff();
+            bossLocationChange();
         }
         else if (bossHand == "Paper")
         {
-            bossText.text = "Great minds think alike! One more!";
+            bossText.text = "Boss: You're starting to think like me! One more!";
             randomizeBossHand();
         }
         else
         {
-            bossText.text = "I got you this time! Why don't come in this weekend";
+            bossText.text = "Boss: Ha! While you're here can you take care one more thing for me? Thanks!";
         }
     }
     
@@ -137,9 +141,7 @@ public class GameManager : MonoBehaviour
         paper.gameObject.SetActive(true);
         scissors.gameObject.SetActive(true);
         bossText.gameObject.SetActive(true);
-        bossText.text = "Oh hey, I was just looking for you!";
-        
-        
+        bossText.text = "Boss: Oh hey, I was just looking for you!";
         
     }
 
@@ -156,7 +158,7 @@ public class GameManager : MonoBehaviour
                 bossHand = "Paper";
                 break;
             case 2:
-                bossHand = "Scissor";
+                bossHand = "Scissors";
                 break;
             default:
                 Debug.Log("uhh, what is that?!");
@@ -204,8 +206,8 @@ public class GameManager : MonoBehaviour
 
         if (currentLocation == locationsArray[1] && hasItem)
         {
-            gameOver = true;
-            locationDescriptionUI.text = "You made it out! Enjoy the weekend!";
+            //gameOver = true;
+            locationDescriptionUI.text = "You made it out safely! Enjoy the weekend!";
             Debug.Log("You made it out! Enjoy your weekend!");
         }
     }
