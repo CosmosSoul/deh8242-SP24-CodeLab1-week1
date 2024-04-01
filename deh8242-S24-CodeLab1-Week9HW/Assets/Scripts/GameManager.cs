@@ -64,14 +64,14 @@ public class GameManager : MonoBehaviour
     {
         int randomBossLocation = UnityEngine.Random.Range(0, locationsArray.Length);
         bossLocation = locationsArray[randomBossLocation];
-        Debug.Log("the Boss is in" + bossLocation);
+        //Debug.Log("the Boss is in" + bossLocation);
     }
 
     public void randomizeItemLocation()
     {
         int randomItemLocation = UnityEngine.Random.Range(0, locationsArray.Length);
         itemLocation = locationsArray[randomItemLocation];
-        Debug.Log("The item is in" + itemLocation);
+        //Debug.Log("The item is in" + itemLocation);
         
     }
 
