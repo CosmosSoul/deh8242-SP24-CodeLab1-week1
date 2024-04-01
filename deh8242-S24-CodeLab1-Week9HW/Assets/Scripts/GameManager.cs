@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public bool gameOver = false;
     public bool hasItem = false;
+    public bool metBoss = false;
     private string bossHand;
     
     
@@ -69,16 +70,93 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void playS()
+    {
+        if (bossHand == "Paper")
+        {
+            bossText.text = "You're so smart. See you later!";
+        }
+        else if (bossHand == "Scissors")
+        {
+            bossText.text = "Great minds think alike! One more!";
+        }
+        else
+        {
+            bossText.text = "I got you this time! Why don't come in this weekend";
+        }
+    } 
+    
+    public void playR()
+    {
+        if (bossHand == "Scissors")
+        {
+            bossText.text = "You're so smart. See you later!";
+        }
+        else if (bossHand == "Rock")
+        {
+            bossText.text = "Great minds think alike! One more!";
+        }
+        else
+        {
+            bossText.text = "I got you this time! Why don't come in this weekend";
+        }
+    }
+    public void playP()
+    {
+        if (bossHand == "Rock")
+        {
+            bossText.text = "You're so smart. See you later!";
+        }
+        else if (bossHand == "Paper")
+        {
+            bossText.text = "Great minds think alike! One more!";
+        }
+        else
+        {
+            bossText.text = "I got you this time! Why don't come in this weekend";
+        }
+    }
+    
+    
+    
+    
+
     public void bossEncounterOn()
     {
+        metBoss = true;
         rock.gameObject.SetActive(true);
         paper.gameObject.SetActive(true);
         scissors.gameObject.SetActive(true);
-        bossText.text = "What will you throw?";
+        bossText.gameObject.SetActive(true);
+        bossText.text = "Oh hey, I was just looking for you!";
+        randomizeBossHand();
+        
+        
     }
 
+    public void randomizeBossHand()
+    {
+        int randomHand = UnityEngine.Random.Range(0, 2);
+
+        switch (randomHand)
+        {
+            case 0:
+                bossHand = "Rock";
+                break;
+            case 1:
+                bossHand = "Paper";
+                break;
+            case 2:
+                bossHand = "Scissor";
+                break;
+            default:
+                Debug.Log("uhh, what is that?");
+                break;
+        }
+    }
     public void bossEncounterOff()
     {
+        
         rock.gameObject.SetActive(false);
         paper.gameObject.SetActive(false);
         scissors.gameObject.SetActive(false);
@@ -101,35 +179,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentLocation == bossLocation)
+        if (currentLocation == bossLocation && !metBoss)
         {
+            metBoss = true;
             bossEncounterOn();
+            //metBoss = false;
+
             //WHY is this throwing an Error?!?
             //int randomHand = Random.Range(0, 2);
-
-            int randomHand = UnityEngine.Random.Range(0, 2);
-
-            switch (randomHand)
-            {
-                case 0:
-                    bossHand = "Rock";
-                    break;
-                case 1:
-                    bossHand = "Paper";
-                    break;
-                case 2:
-                    bossHand = "Scissor";
-                    break;
-                default:
-                    Debug.Log("uhh, what is that?");
-                    break;
-            }
         }
+        
         if (currentLocation == bossLocation && !gameOver)
         {
-            gameOver = true;
+            //gameOver = true;
+            
             Debug.Log("You have to work this weekend!");
-            gameOver = false;
+            //gameOver = false;
         }
 
         if (currentLocation == locationsArray[1] && hasItem)
