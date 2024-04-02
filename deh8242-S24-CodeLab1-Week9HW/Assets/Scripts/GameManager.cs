@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,14 +61,14 @@ public class GameManager : MonoBehaviour
 
     public void bossLocationChange()
     {
-        int randomBossLocation = UnityEngine.Random.Range(0, locationsArray.Length);
+        int randomBossLocation = Random.Range(0, locationsArray.Length);
         bossLocation = locationsArray[randomBossLocation];
         //Debug.Log("the Boss is in" + bossLocation);
     }
 
     public void randomizeItemLocation()
     {
-        int randomItemLocation = UnityEngine.Random.Range(0, locationsArray.Length);
+        int randomItemLocation = Random.Range(0, locationsArray.Length);
         itemLocation = locationsArray[randomItemLocation];
         //Debug.Log("The item is in" + itemLocation);
         
@@ -168,7 +167,7 @@ public class GameManager : MonoBehaviour
 
     public void randomizeBossHand()
     {
-        int randomHand = UnityEngine.Random.Range(0, 2);
+        int randomHand = Random.Range(0, 2);
 
         switch (randomHand)
         {

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Office
   m_EditorClassIdentifier: 
   locationName: Office
-  locationDesc: Get some work done
-  hasPassport: 0
+  locationDesc: Procrastinate some work
+  hasKeyItem: 0
   north: {fileID: 0}
   south: {fileID: 11400000, guid: 36f792ba65e834b4d92e56acaebdae2a, type: 2}
   west: {fileID: 11400000, guid: 886a7a2508b06704b86523a1e32e7419, type: 2}
