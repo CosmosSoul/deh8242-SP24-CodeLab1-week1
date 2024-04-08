@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 0}
+  gameManager: {fileID: 5372103702648083622, guid: 06cb2cef70c21414a94a795fa1a18838, type: 3}
 --- !u!58 &-1252412316052873287
 CircleCollider2D:
   m_ObjectHideFlags: 0

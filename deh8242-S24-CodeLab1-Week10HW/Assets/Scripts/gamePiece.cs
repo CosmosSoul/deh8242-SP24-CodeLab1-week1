@@ -8,6 +8,7 @@ public class gamePiece : MonoBehaviour
 {
     public GameObject gridSpace;
     private SpriteRenderer piece_SpriteRenderer;
+    public GameManager gameManager;
     
     
     
@@ -16,6 +17,7 @@ public class gamePiece : MonoBehaviour
     {
         //get sprite renderer for manipulation later
         piece_SpriteRenderer = GetComponent<SpriteRenderer>();
+        //gameManager = GameObject.Find("Game Manager");
     }
 
     // Update is called once per frame
@@ -28,9 +30,11 @@ public class gamePiece : MonoBehaviour
     {
         if (gameObject.CompareTag("enemy"))
         {
-            //if gameobject exists, change color on click and log a message to the console
+            //if gameObject exists, change color on click, reduce enemy health by 1, and log a message to the console
             Debug.Log("you got a HIT!" + gameObject.transform.position);
             piece_SpriteRenderer.color = new Color(0.1f, 0.5339f, 1f);
+            gameManager.enemyHealth--;
+            Debug.Log(gameManager.enemyHealth);
             //gameObject.SetActive(false); 
             //= Color.red;
         }

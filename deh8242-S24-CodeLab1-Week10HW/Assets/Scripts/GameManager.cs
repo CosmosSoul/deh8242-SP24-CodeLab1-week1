@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
     public int gridHeight = 7;
 
     public int[,] gameGrid;
+    public int[,] lightEnemy;
+    public int[,] midEnemy;
+    
+    public int enemyHealth = 0;
 
     public GameObject enemyPiece, p2Piece;
+    public GameManager instance;
 
     public int[,] enemyOne;
     //QUESTION! Why is UnityEngine call needed here when already using?!
@@ -31,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         //setup game board on a new grid
         gameGrid = new int[gridWidth, gridHeight];
+        instance = this;
+        
         
         //Debug.Log(gameGrid[4,5]);
 
@@ -44,11 +51,12 @@ public class GameManager : MonoBehaviour
             {
                 Instantiate(p2Piece, new Vector3(j, i), quaternion.identity);
                 gameGrid[j, i] = 0;
+                
             }
         }
 
         //testing array position
-        gameGrid[4, 4] = 5;
+        //gameGrid[4, 4] = 5;
         Debug.Log(gameGrid[4, 4]);
         
         spawnLightShip();
@@ -64,8 +72,18 @@ public class GameManager : MonoBehaviour
         int randomStartPos = gameGrid[randomPos, randomPos];
         
         Instantiate(enemyPiece,new Vector3(randomPos, randomPos), Quaternion.identity);
+        gameGrid[randomPos, randomPos] = 1;
+        enemyHealth++;
         Instantiate(enemyPiece,new Vector3(randomPos+1, randomPos), Quaternion.identity);
+        gameGrid[randomPos+1, randomPos] = 1;
+        enemyHealth++;
         Instantiate(enemyPiece,new Vector3(randomPos+2, randomPos), Quaternion.identity);
+        gameGrid[randomPos+2, randomPos] = 1;
+        enemyHealth++;
+        
+        Debug.Log(gameGrid); 
+        
+        
 
         
        /* for (int i = 0; i < randomLight; i++)
@@ -85,8 +103,11 @@ public class GameManager : MonoBehaviour
         int randomMid = UnityEngine.Random.Range(4, 7);
 
         Instantiate(enemyPiece, new Vector3(randomPos, randomPos), Quaternion.identity);
+        enemyHealth++;
         Instantiate(enemyPiece, new Vector3(randomPos, randomPos+1), Quaternion.identity);
+        enemyHealth++;
         Instantiate(enemyPiece, new Vector3(randomPos, randomPos+2), Quaternion.identity);
+        enemyHealth++;
     }
 
     // Update is called once per frame
@@ -98,6 +119,26 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        
+        
+        /*
+        for (int i = 0; i < gridWidth; i++)
+        {
+            for (int j = 0; j < gridHeight; j++)
+            {
+                if (gameGrid[i, j] == 1)
+                {
+                    Debug.Log("the game is live!");
+                }
+                else
+                {
+                    Debug.Log("You sunk all the ships!");
+                }
+            }
+            
+            
+        }
+        */
     }
     
     /*
