@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
             for (int j = 0; j < gridHeight; j++)
             {
                 Instantiate(p2Piece, new Vector3(j, i), quaternion.identity);
+                gameGrid[j, i] = 0;
             }
         }
 
