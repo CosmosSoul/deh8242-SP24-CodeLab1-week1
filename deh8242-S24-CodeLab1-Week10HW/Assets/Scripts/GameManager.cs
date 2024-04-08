@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         }
         
         spawnLightShip();
+        spawnMidShip();
     }
 
     void spawnLightShip()
@@ -51,14 +52,30 @@ public class GameManager : MonoBehaviour
         int randomPos = UnityEngine.Random.Range(0, gridHeight-1);
         int randomLight = UnityEngine.Random.Range(3, 5);
         int randomStartPos = gameGrid[randomPos, randomPos];
-        for (int i = 0; i < randomLight; i++)
+        
+        Instantiate(enemyPiece,new Vector3(randomPos, randomPos), Quaternion.identity);
+        Instantiate(enemyPiece,new Vector3(randomPos+1, randomPos), Quaternion.identity);
+        Instantiate(enemyPiece,new Vector3(randomPos+2, randomPos), Quaternion.identity);
+
+        
+       /* for (int i = 0; i < randomLight; i++)
         {
-            Instantiate(enemyPiece,new Vector3( randomPos, i), Quaternion.identity);
 
             for (int j = 0; j < randomLight; j++)
             {
             }
         }
+        */
+    }
+
+    void spawnMidShip()
+    {
+        int randomPos = UnityEngine.Random.Range(0, gridHeight);
+        int randomMid = UnityEngine.Random.Range(4, 7);
+
+        Instantiate(enemyPiece, new Vector3(randomPos, randomPos), Quaternion.identity);
+        Instantiate(enemyPiece, new Vector3(randomPos, randomPos+1), Quaternion.identity);
+        Instantiate(enemyPiece, new Vector3(randomPos, randomPos+2), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -67,9 +84,12 @@ public class GameManager : MonoBehaviour
        
     }
     
-    void OnMouseDown(){
+    /*
+      void OnMouseDown(){
+     
         Debug.Log("you clicked!");
         Destroy(gameObject);
     }
+    */
    
 }
