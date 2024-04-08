@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = Unity.Mathematics.Random;
 
 public class GameManager : MonoBehaviour
@@ -27,8 +28,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //setup game board on a new grid
         gameGrid = new int[gridWidth, gridHeight];
+        
         //Debug.Log(gameGrid[4,5]);
 
         for (int i = 0; i < gridWidth; i++)
@@ -42,11 +44,17 @@ public class GameManager : MonoBehaviour
                 Instantiate(p2Piece, new Vector3(j, i), quaternion.identity);
             }
         }
+
+        //testing array position
+        gameGrid[4, 4] = 5;
+        Debug.Log(gameGrid[4, 4]);
         
         spawnLightShip();
         spawnMidShip();
     }
 
+    
+    //spawns light sized ship
     void spawnLightShip()
     {
         int randomPos = UnityEngine.Random.Range(0, gridHeight-1);
@@ -68,6 +76,7 @@ public class GameManager : MonoBehaviour
         */
     }
 
+    //spawns medium sized ship
     void spawnMidShip()
     {
         int randomPos = UnityEngine.Random.Range(0, gridHeight);
@@ -81,7 +90,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //Reset button using spacebar
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     
     /*

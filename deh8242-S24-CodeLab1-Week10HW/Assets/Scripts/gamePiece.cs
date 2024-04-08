@@ -14,6 +14,7 @@ public class gamePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //get sprite renderer for manipulation later
         piece_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -27,6 +28,7 @@ public class gamePiece : MonoBehaviour
     {
         if (this)
         {
+            //if gameobject exists, change color on click and log a message to the console
             Debug.Log("you clicked!: " + gameObject.transform.position);
             piece_SpriteRenderer.color = new Color(0.230f, 0.160f, 0.250f);
             //gameObject.SetActive(false); 
