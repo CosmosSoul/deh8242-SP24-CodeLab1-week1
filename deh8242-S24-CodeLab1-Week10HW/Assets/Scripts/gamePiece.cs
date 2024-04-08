@@ -26,10 +26,10 @@ public class gamePiece : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (this)
+        if (gameObject.CompareTag("enemy"))
         {
             //if gameobject exists, change color on click and log a message to the console
-            Debug.Log("you clicked!: " + gameObject.transform.position);
+            Debug.Log("you got a HIT!" + gameObject.transform.position);
             piece_SpriteRenderer.color = new Color(0.1f, 0.5339f, 1f);
             //gameObject.SetActive(false); 
             //= Color.red;
@@ -38,7 +38,7 @@ public class gamePiece : MonoBehaviour
         {
             piece_SpriteRenderer.color = Color.red;
         }
-
+ 
         //Destroy(gameObject);
     }
 }
