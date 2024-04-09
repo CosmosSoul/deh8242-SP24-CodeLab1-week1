@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,14 +13,17 @@ public class GameManager : MonoBehaviour
     public int gridWidth = 7;
     public int gridHeight = 7;
 
+    public TextMeshPro gameOverText;
+
     public int[,] gameGrid;
     public int[,] lightEnemy;
     public int[,] midEnemy;
     
-    public int enemyHealth = 0;
+    
+    public int enemyHealth;
 
     public GameObject enemyPiece, p2Piece;
-    public GameManager instance;
+    public static GameManager instance;
 
     public int[,] enemyOne;
     //QUESTION! Why is UnityEngine call needed here when already using?!
@@ -29,14 +33,26 @@ public class GameManager : MonoBehaviour
     //public int randomHeavy = UnityEngine.Random.Range(7, 9);
 
 
-    
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        /*else
+        {
+            Destroy(gameObject);
+        }
+        */
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        //setup game board on a new grid
+        //setup game board on a new grid, disable gameOverText
         gameGrid = new int[gridWidth, gridHeight];
-        instance = this;
+        gameOverText.gameObject.SetActive(false);
         
         
         //Debug.Log(gameGrid[4,5]);
@@ -54,7 +70,7 @@ public class GameManager : MonoBehaviour
                 
             }
         }
-
+    
         //testing array position
         //gameGrid[4, 4] = 5;
         Debug.Log(gameGrid[4, 4]);
@@ -71,14 +87,14 @@ public class GameManager : MonoBehaviour
         int randomLight = UnityEngine.Random.Range(3, 5);
         int randomStartPos = gameGrid[randomPos, randomPos];
         
-        Instantiate(enemyPiece,new Vector3(randomPos, randomPos), Quaternion.identity);
-        gameGrid[randomPos, randomPos] = 1;
-        enemyHealth++;
+        //Instantiate(enemyPiece,new Vector3(randomPos, randomPos), Quaternion.identity);
+        //gameGrid[randomPos, randomPos] = 1;
+        //enemyHealth++;
         Instantiate(enemyPiece,new Vector3(randomPos+1, randomPos), Quaternion.identity);
-        gameGrid[randomPos+1, randomPos] = 1;
+        //gameGrid[randomPos+1, randomPos] = 1;
         enemyHealth++;
         Instantiate(enemyPiece,new Vector3(randomPos+2, randomPos), Quaternion.identity);
-        gameGrid[randomPos+2, randomPos] = 1;
+        //gameGrid[randomPos+2, randomPos] = 1;
         enemyHealth++;
         
         Debug.Log(gameGrid); 
@@ -99,7 +115,7 @@ public class GameManager : MonoBehaviour
     //spawns medium sized ship
     void spawnMidShip()
     {
-        int randomPos = UnityEngine.Random.Range(0, gridHeight);
+        int randomPos = UnityEngine.Random.Range(0, gridHeight-1);
         int randomMid = UnityEngine.Random.Range(4, 7);
 
         Instantiate(enemyPiece, new Vector3(randomPos, randomPos), Quaternion.identity);
@@ -113,13 +129,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyHealth <= 0)
+        {
+            gameOverText.gameObject.SetActive(true);
+        }
         //Reset button using spacebar
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
+            spawnLightShip();
+            spawnMidShip();
+            gameOverText.gameObject.SetActive(false);
         }
-        
+
+     
         
         /*
         for (int i = 0; i < gridWidth; i++)
