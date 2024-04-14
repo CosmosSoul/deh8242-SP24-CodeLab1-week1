@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a38f13b-4fa4-4b33-85d0-4430d68485d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.deh8242-S24-CodeLab1-Week10HW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.deh8242-S24-CodeLab1-Week10HW/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/gamePiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/gamePiece.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/gamePiece.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/gamePiece.cs.meta" afterDir="false" />
-    </list>
+    <list default="true" id="2a38f13b-4fa4-4b33-85d0-4430d68485d5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712355697620</updated>
       <workItem from="1712355700528" duration="2907000" />
-      <workItem from="1712585493889" duration="19954000" />
+      <workItem from="1712585493889" duration="21150000" />
     </task>
     <servers />
   </component>
