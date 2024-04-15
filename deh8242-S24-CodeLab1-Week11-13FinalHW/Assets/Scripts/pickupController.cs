@@ -21,5 +21,6 @@ public class pickupController : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.instance.Score++;
+        Debug.Log(gameManager.instance.highScoreString);
     }
 }
