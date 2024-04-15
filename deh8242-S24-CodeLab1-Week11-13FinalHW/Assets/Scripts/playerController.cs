@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,20 @@ public class playerController : MonoBehaviour
             normalizedVelocity *= playerMaxVelocity;
             playerRB.velocity = normalizedVelocity;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Space) && (playerIsGrounded))
+        {
+            playerRB.AddForce(new Vector2(playerRB.velocity.x, playerJumpForce * 15));
+            playerIsGrounded = false;
+            Debug.Log("boing!");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("ground"))
+        {
+            playerIsGrounded = true;
+        }
     }
 }
