@@ -43,6 +43,32 @@ public class gameManager : MonoBehaviour
         {
             score = value;
             Debug.Log("Score Update!");
+
+            if (isHighScore(score))
+            {
+                int highScoreSlot = -1;
+
+                for (int i = 0; i < HighScores.Count; i++)
+                {
+                    if (score > _highscores[i])
+                    {
+                        highScoreSlot = i;
+                        break;
+                    }
+                }
+                _highscores.Insert(highScoreSlot, score);
+                _highscores = _highscores.GetRange(0, 7);
+
+                string scoreBoardText = "";
+
+                foreach (var highScore in _highscores)
+                {
+                    scoreBoardText += highScore + "\n";
+                }
+
+                highScoreString = scoreBoardText;
+                File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoreString);
+            }
         }
     }
 
