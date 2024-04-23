@@ -65,7 +65,7 @@ public class asciLevelLoader : MonoBehaviour
                     case 'K':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/kanjiPickup"));
                         break;
-                    case 'P':
+                    case 'L':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
                         break;
                     default:
