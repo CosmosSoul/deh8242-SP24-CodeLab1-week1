@@ -130,7 +130,7 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOverText.gameObject.SetActive(false);
+        //gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
     }
 
