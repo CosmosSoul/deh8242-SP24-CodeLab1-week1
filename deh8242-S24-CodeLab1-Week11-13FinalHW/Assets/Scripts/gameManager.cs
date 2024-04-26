@@ -20,6 +20,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI displayText;
 
     public bool gameOverCheck;
 
@@ -35,7 +36,11 @@ public class gameManager : MonoBehaviour
     public int maxTime;
 
     public float gameTime;
-
+    
+    //A dictionary to hold the player's obtained words
+    private Dictionary<string, string> wordBank = new Dictionary<string, string>();
+    //a dictionary to hold the target words
+    private Dictionary<string, string> targetWord = new Dictionary<string, string>();
     public int Score
     {
         get { return score; }
