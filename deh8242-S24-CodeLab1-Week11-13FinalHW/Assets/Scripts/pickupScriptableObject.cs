@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 
 
@@ -11,4 +12,6 @@ public class pickupScriptableObject : ScriptableObject
 {
     public string letterName;
     public string letterValue;
+    public Sprite letterImage;
+    
 }
