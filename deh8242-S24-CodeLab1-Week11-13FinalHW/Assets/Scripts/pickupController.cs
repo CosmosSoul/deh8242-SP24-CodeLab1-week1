@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class pickupController : MonoBehaviour
 {
+    GameObject letterPrefab; 
     // Start is called before the first frame update
     void Start()
     {

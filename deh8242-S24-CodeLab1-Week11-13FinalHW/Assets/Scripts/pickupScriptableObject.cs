@@ -13,5 +13,5 @@ public class pickupScriptableObject : ScriptableObject
     public string letterName;
     public string letterValue;
     public Sprite letterImage;
-    
+    public GameObject pickup;
 }
