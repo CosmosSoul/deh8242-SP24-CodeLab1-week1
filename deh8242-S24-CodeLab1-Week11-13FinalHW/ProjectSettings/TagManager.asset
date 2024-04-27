@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - targetA
+  - targetB
+  - targetC
+  - targetD
+  - targetE
+  - targetF
+  - targetG
+  - targetH
   layers:
   - Default
   - TransparentFX

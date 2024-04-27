@@ -47,5 +47,11 @@ public class playerController : MonoBehaviour
         {
             playerIsGrounded = true;
         }
+
+        if (other.gameObject.CompareTag("targetA"))
+        {
+            gameManager.instance.wordBank.Push("a");
+            Debug.Log(gameManager.instance.wordBank);
+        }
     }
 }

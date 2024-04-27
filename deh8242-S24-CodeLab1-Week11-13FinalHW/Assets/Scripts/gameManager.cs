@@ -36,11 +36,14 @@ public class gameManager : MonoBehaviour
     public int maxTime;
 
     public float gameTime;
+    public Stack<string> wordBank = new Stack<string>();
     
     //A dictionary to hold the player's obtained words
-    private Dictionary<string, string> wordBank = new Dictionary<string, string>();
+    //private Dictionary<string, string> wordBank = new Dictionary<string, string>();
     //a dictionary to hold the target words
-    private Dictionary<string, string> targetWord = new Dictionary<string, string>();
+    //private Dictionary<string, string> targetWord = new Dictionary<string, string>();
+    
+    
     public int Score
     {
         get { return score; }
@@ -141,6 +144,11 @@ public class gameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    public void BTNA()
     {
         
     }

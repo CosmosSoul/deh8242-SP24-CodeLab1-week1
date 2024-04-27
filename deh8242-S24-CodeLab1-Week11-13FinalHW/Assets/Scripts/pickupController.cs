@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class pickupController : MonoBehaviour
 {
-    GameObject letterPrefab; 
+    //GameObject letterPrefab; 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(letterPrefab);
+       // Instantiate(letterPrefab);
         
         
     }
@@ -22,8 +22,9 @@ public class pickupController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+      
         Destroy(gameObject);
-        gameManager.instance.Score++;
+       // gameManager.instance.Score++;
         Debug.Log(gameManager.instance.highScoreString);
     }
 }
