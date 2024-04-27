@@ -20,7 +20,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI displayText;
+    [FormerlySerializedAs("displayText")] public TextMeshProUGUI letterBankText;
 
     public bool gameOverCheck;
 
@@ -36,7 +36,7 @@ public class gameManager : MonoBehaviour
     public int maxTime;
 
     public float gameTime;
-    public Stack<string> wordBank = new Stack<string>();
+    public Stack<string> letterBank = new Stack<string>();
     
     //A dictionary to hold the player's obtained words
     //private Dictionary<string, string> wordBank = new Dictionary<string, string>();
@@ -145,7 +145,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //letterBankText.text = letterBank
     }
 
     public void BTNA()

@@ -50,8 +50,18 @@ public class playerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("targetA"))
         {
-            gameManager.instance.wordBank.Push("a");
-            Debug.Log(gameManager.instance.wordBank);
+            gameManager.instance.letterBank.Push("a");
+            Debug.Log(gameManager.instance.letterBank.Count);
+            gameManager.instance.letterBankText.text += gameManager.instance.letterBank.Pop();
         }
+        
+        if (other.gameObject.CompareTag("targetB"))
+        {
+            gameManager.instance.letterBank.Push("b");
+            Debug.Log(gameManager.instance.letterBank.Count);
+            gameManager.instance.letterBankText.text += gameManager.instance.letterBank.Pop();
+        }
+
+        
     }
 }
