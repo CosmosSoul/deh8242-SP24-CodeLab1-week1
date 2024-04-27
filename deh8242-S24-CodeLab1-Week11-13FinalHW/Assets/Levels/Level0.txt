@@ -1,10 +1,10 @@
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-g                                                                                       g
-g                                                                                       g
-g                                                                                       g
-g                                                                                       g
-g                                                                                       g
-g                                                                                       g
-g                                                                              k        g
-g            k                                                                          g
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+8                                                                                       8
+8                                                                                       8
+8                                                                                       8
+8                                                                                       8
+8                                                                                       8
+8                                                                                       8
+8   a  b  c                                                                             8
+8  a   A  k A  k a                                                                      8
+88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888

@@ -59,15 +59,22 @@ public class asciLevelLoader : MonoBehaviour
 
                 switch (c)
                 {
-                    case 'G':
+                    case 'A':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupA"));
+                        break;
+                    case 'B':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupB"));
+                        break;
+                    case 'C':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupC"));
+                        break;
+                    case '8':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/groundBlock"));
                         break;
                     case 'K':
-                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/kanjiPickup"));
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickup"));
                         break;
-                    case 'L':
-                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
-                        break;
+             
                     default:
                         break;
                         

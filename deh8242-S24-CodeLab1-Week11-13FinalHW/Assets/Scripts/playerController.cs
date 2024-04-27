@@ -60,6 +60,13 @@ public class playerController : MonoBehaviour
             gameManager.instance.letterBank.Push("b");
             Debug.Log(gameManager.instance.letterBank.Count);
             gameManager.instance.letterBankText.text += gameManager.instance.letterBank.Pop();
+        } 
+        
+        if (other.gameObject.CompareTag("targetC"))
+        {
+            gameManager.instance.letterBank.Push("c");
+            Debug.Log(gameManager.instance.letterBank.Count);
+            gameManager.instance.letterBankText.text += gameManager.instance.letterBank.Pop();
         }
 
         
