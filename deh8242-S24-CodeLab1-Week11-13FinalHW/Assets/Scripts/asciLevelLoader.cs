@@ -146,6 +146,9 @@ public class asciLevelLoader : MonoBehaviour
                     case '0':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterEnemy"));
                         break;
+                    case '=':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/goalBlock"));
+                        break;
                     default:
                         break;
                         

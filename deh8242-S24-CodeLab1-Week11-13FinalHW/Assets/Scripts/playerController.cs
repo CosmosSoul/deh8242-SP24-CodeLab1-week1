@@ -69,6 +69,21 @@ public class playerController : MonoBehaviour
             gameManager.instance.letterBankText.text += gameManager.instance.letterBank.Pop();
         }
 
+
+        if (other.gameObject.CompareTag("goalBlock"))
+        {
+            if (gameManager.instance.wordBank.ContainsKey(gameManager.instance.letterBankText.text))
+            {
+                Debug.Log("Job Nice! Next Level Get!");
+                Debug.Log(gameManager.instance.wordBank["cab"]);
+            }
+
+            else
+            {
+                Debug.Log("no no that's not it!");
+            }
+        }
+
         
     }
 }

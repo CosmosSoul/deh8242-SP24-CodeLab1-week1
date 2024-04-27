@@ -13,6 +13,25 @@ TagManager:
   - targetF
   - targetG
   - targetH
+  - targetI
+  - targetJ
+  - targetK
+  - targetL
+  - targetM
+  - targetN
+  - targetO
+  - targetP
+  - targetQ
+  - targetR
+  - targetS
+  - targetT
+  - targetU
+  - targetV
+  - targetW
+  - targetX
+  - targetY
+  - targetZ
+  - goalBlock
   layers:
   - Default
   - TransparentFX

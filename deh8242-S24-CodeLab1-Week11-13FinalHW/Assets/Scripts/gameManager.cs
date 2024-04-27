@@ -21,6 +21,7 @@ public class gameManager : MonoBehaviour
 
     public TextMeshProUGUI gameOverText;
     [FormerlySerializedAs("displayText")] public TextMeshProUGUI letterBankText;
+    public TextMeshProUGUI targetWordText;
 
     public bool gameOverCheck;
 
@@ -37,6 +38,7 @@ public class gameManager : MonoBehaviour
 
     public float gameTime;
     public Stack<string> letterBank = new Stack<string>();
+    public Dictionary<string, string> wordBank = new Dictionary<string, string>();
     
     //A dictionary to hold the player's obtained words
     //private Dictionary<string, string> wordBank = new Dictionary<string, string>();
@@ -140,6 +142,7 @@ public class gameManager : MonoBehaviour
     {
         //gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+        wordBank.Add("cab", "a car that you can ride in!");
     }
 
     // Update is called once per frame
