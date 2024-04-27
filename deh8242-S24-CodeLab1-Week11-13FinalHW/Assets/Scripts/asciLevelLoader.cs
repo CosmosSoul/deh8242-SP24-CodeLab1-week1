@@ -77,13 +77,75 @@ public class asciLevelLoader : MonoBehaviour
                     case 'F':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupF"));
                         break;
+                    case 'G':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupG"));
+                        break;
+                    case 'H':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupH"));
+                        break;
+                    case 'I':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupI"));
+                        break;
+                    case 'J':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupJ"));
+                        break;
+                    case 'K':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupK"));
+                        break;
+                    case 'L':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupL"));
+                        break;
+                    case 'M':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupM"));
+                        break;
+                    case 'N':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupN"));
+                        break;
+                    case 'O':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupO"));
+                        break;
+                    case 'P':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupP"));
+                        break;
+                    case 'Q':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupQ"));
+                        break;
+                    case 'R':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupR"));
+                        break;
+                    case 'S':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupS"));
+                        break;
+                    case 'T':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupT"));
+                        break;
+                    case 'U':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupU"));
+                        break;
+                    case 'V':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupV"));
+                        break;
+                    case 'W':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupW"));
+                        break;
+                    case 'X':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupX"));
+                        break;
+                    case 'Y':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupY"));
+                        break;
+                    case 'Z':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupZ"));
+                        break;
+                    case '-':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/playerEnemy"));
+                        break;
                     case '8':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/groundBlock"));
                         break;
                     case '0':
-                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickup"));
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterEnemy"));
                         break;
-             
                     default:
                         break;
                         
