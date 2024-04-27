@@ -68,10 +68,19 @@ public class asciLevelLoader : MonoBehaviour
                     case 'C':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupC"));
                         break;
+                    case 'D':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupD"));
+                        break;
+                    case 'E':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupE"));
+                        break;
+                    case 'F':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickupF"));
+                        break;
                     case '8':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/groundBlock"));
                         break;
-                    case 'K':
+                    case '0':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/letterPickup"));
                         break;
              
