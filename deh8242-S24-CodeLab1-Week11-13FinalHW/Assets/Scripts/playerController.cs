@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -76,6 +77,8 @@ public class playerController : MonoBehaviour
             {
                 Debug.Log("Job Nice! Next Level Get!");
                 Debug.Log(gameManager.instance.wordBank["cab"]);
+                //gameManager.instance.levelNum++;
+                asciLevelLoader.instance.CurrentLevel++;
             }
 
             else
