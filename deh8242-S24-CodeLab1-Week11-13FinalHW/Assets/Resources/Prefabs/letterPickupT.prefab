@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3366309682657347047}
   - component: {fileID: 4864837709348269039}
   m_Layer: 0
-  m_Name: letterPickupK
-  m_TagString: targetK
+  m_Name: letterPickupT
+  m_TagString: targetT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98f73053ccd50ac46ab4572001eda10d, type: 3}
+  m_Sprite: {fileID: 6926503733165724358, guid: cf9d5f8425a6148429292fb18435e68d, type: 3}
   m_Color: {r: 1, g: 0.45117468, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,8 +133,8 @@ BoxCollider2D:
   m_Offset: {x: -0.13580894, y: 0.2263484}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    pivot: {x: 0.46724892, y: -0.027139876}
+    oldSize: {x: 4.58, y: 4.79}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3366309682657347047}
   - component: {fileID: 4864837709348269039}
   m_Layer: 0
-  m_Name: letterPickupK
-  m_TagString: targetK
+  m_Name: letterPickupW
+  m_TagString: targetW
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98f73053ccd50ac46ab4572001eda10d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9212a670416816f4cb638234bb74a663, type: 3}
   m_Color: {r: 1, g: 0.45117468, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
