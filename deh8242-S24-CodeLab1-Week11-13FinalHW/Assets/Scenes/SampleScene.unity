@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 2102684991}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -748,6 +748,7 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   gameOverText: {fileID: 0}
   letterBankText: {fileID: 1913001731}
+  targetWordText: {fileID: 0}
   gameOverCheck: 0
   gameAudio: {fileID: 0}
   maxTime: 0

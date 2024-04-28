@@ -149,6 +149,11 @@ public class asciLevelLoader : MonoBehaviour
                     case '=':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/goalBlock"));
                         break;
+                    case '1':
+                        newObject = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
+                        Camera.main.transform.parent = newObject.transform;
+                        Camera.main.transform.position = new Vector3(0, 0, -10);
+                        break;
                     default:
                         break;
                         
