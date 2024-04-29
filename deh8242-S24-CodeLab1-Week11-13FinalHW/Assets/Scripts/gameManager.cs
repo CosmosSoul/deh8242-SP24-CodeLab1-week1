@@ -46,6 +46,8 @@ public class gameManager : MonoBehaviour
     //private Dictionary<string, string> targetWord = new Dictionary<string, string>();
     
     
+    
+    //manages score and high scores
     public int Score
     {
         get { return score; }
@@ -124,6 +126,8 @@ public class gameManager : MonoBehaviour
         return false;
     }
 
+    
+    // makes sure instance exists and if not, sets instance
     private void Awake()
     {
         if (instance == null)
@@ -138,6 +142,9 @@ public class gameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
+    
+    
+    //system datapath is appended to DATA_DIR and DATA_HS_FILE and set to DATA_FULL_HS_FILE_PATH
     void Start()
     {
         //gameOverText.gameObject.SetActive(false);
@@ -149,6 +156,34 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         //letterBankText.text = letterBank
+    }
+
+    //Easy word list for beginner level, should be called from level 2
+    public void EasyWordL1()
+    {
+        wordBank.Add("Dog", "an animal that goes woof!");
+        wordBank.Add("God", "who knows?");
+        wordBank.Add("Go", "move towards something!");
+        wordBank.Add("Do", "make action, have at them!");
+    }
+
+    //medium word list for medium level, should be called from level 3 
+    public void MediumWordL1()
+    {
+        wordBank.Add("Red", "the color of passion and of apples!");
+        wordBank.Add("Dire", "serious things!");
+        wordBank.Add("Tie", "the long thing on your chest, nice suit!");
+        wordBank.Add("Rite", "to be accepted you must...");
+        wordBank.Add("Dirt", "its usually on the ground and makes things unclean :(");
+        wordBank.Add("tire", "V - run of out energy, N - the wheels on the bus go round and round!");
+        wordBank.Add("Rid", "Remove it from sight!");
+    }
+
+    //difficult word list for harder level, should be called late game
+    public void DifficultWordL1()
+    {
+        
+        
     }
 
     public void BTNA()

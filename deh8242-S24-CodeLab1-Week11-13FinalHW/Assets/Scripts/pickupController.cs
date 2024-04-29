@@ -20,6 +20,7 @@ public class pickupController : MonoBehaviour
         
     }
 
+    //when pickup collides with something, it should be destroyed, the score should increment and highScoreString should update
     private void OnCollisionEnter2D(Collision2D col)
     {
       

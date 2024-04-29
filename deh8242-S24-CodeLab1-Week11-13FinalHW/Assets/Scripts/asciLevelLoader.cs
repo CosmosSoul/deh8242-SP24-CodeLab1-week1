@@ -29,6 +29,9 @@ public class asciLevelLoader : MonoBehaviour
 
     public static asciLevelLoader instance;
     // Start is called before the first frame update
+   
+    //just before the first frame update, FILE_PATH is get to system dependent data path, appended to Unity specific file path
+    //also LoadLevel() is called to load the first level
     void Start()
     {
         instance = this;
@@ -37,7 +40,11 @@ public class asciLevelLoader : MonoBehaviour
         
     }
 
-    void LoadLevel()
+    
+    //this nested for loops checks .txt file for specific characters along the x, and y axes and then instantiates a corresponding gameObject accordingly
+    //also creates a container in the Unity hierarchy to hold all the newly instantiated gameObjects
+    //letters a-z, plus player, goal and enemy gameObjects should be accounted for in the switch statement
+   public void LoadLevel()
     {
         Destroy(level);
         level = new GameObject("Level Container");
@@ -149,6 +156,7 @@ public class asciLevelLoader : MonoBehaviour
                     case '=':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/goalBlock"));
                         break;
+                    //wherever the player is instantiated. the main Camera is childed to the player's position for easy viewing pleasure ;)
                     case '1':
                         newObject = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
                         Camera.main.transform.parent = newObject.transform;
