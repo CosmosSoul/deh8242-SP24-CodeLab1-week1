@@ -154,6 +154,11 @@ public class gameManager : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+        
+        
+        
+        //Letters are: C A B
+        targetLettersText.text = "Your Letters are: A B C";
         wordBank.Add("cab", "a car that you can ride in!");
     }
 
@@ -171,9 +176,12 @@ public class gameManager : MonoBehaviour
 
                 if (maxTime <= 0f)
                 {
+                    
                     asciLevelLoader.instance.CurrentLevel++;
                     maxTime = 25f;
                 }
+
+                
                 
                 
             }
@@ -185,17 +193,17 @@ public class gameManager : MonoBehaviour
     public void EasyWordL1()
     {
         //Letters are: O D G
-        targetLettersText.text = "O D G";
-        wordBank.Add("Dog", "an animal that goes woof!");
-        wordBank.Add("God", "who knows?");
-        wordBank.Add("Go", "move towards something!");
-        wordBank.Add("Do", "make action, have at them!");
+        targetLettersText.text = "Your letters are: O D G";
+        wordBank.Add("dog", "an animal that goes woof!");
+        wordBank.Add("god", "who knows?");
+        wordBank.Add("go", "move towards something!");
+        wordBank.Add("do", "make action, have at them!");
     }
     //easy word list for beginner level, should be called from level 3 
     public void EasyWordL2()
     {
         //Letters are: A L E P
-        targetLettersText.text = "A L E P";
+        targetLettersText.text = "Your letters are: A L E P";
         wordBank.Add("leap", "big jump!");
         wordBank.Add("pale", "you're not looking so good...");
         wordBank.Add("peal", "I prefer without skin");
@@ -213,7 +221,7 @@ public class gameManager : MonoBehaviour
     public void MediumWordL1()
     {
         //Letters are : R E D I T 
-        targetLettersText.text = "R E D I T";
+        targetLettersText.text = "Your letters are: R E D I T";
         wordBank.Add("Red", "the color of passion and of apples!");
         wordBank.Add("Dire", "serious things!");
         wordBank.Add("Tie", "the long thing on your chest, nice suit!");
@@ -235,7 +243,7 @@ public class gameManager : MonoBehaviour
     public void MediumWordL2()
     {
         //Letters are: S B U H A
-        targetLettersText.text = "S B U H A";
+        targetLettersText.text = "Your letters are: S B U H A";
         wordBank.Add("bah", "humbug!");
         wordBank.Add("hub", "the center it all");
         wordBank.Add("ash", "our favorite classmate ;)");

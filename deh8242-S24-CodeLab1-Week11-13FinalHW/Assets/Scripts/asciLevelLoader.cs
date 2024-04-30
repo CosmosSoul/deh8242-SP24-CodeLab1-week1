@@ -20,7 +20,29 @@ public class asciLevelLoader : MonoBehaviour
         set
         {
             currentLevel = value;
-            LoadLevel();
+            
+            if (CurrentLevel == 1)
+            {
+                gameManager.instance.EasyWordL1();
+                Debug.Log(gameManager.instance.wordBank.Count);
+                LoadLevel();
+            }
+            else if (CurrentLevel == 2)
+            {
+                gameManager.instance.EasyWordL2();
+                LoadLevel();
+            }
+            else if (CurrentLevel == 3)
+            {
+                gameManager.instance.MediumWordL1();
+                LoadLevel();
+            }
+            else if(CurrentLevel == 4)
+            {
+                gameManager.instance.MediumWordL2();
+                LoadLevel();
+            }
+            
             
         }
     }
