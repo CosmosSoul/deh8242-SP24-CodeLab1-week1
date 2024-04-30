@@ -220,7 +220,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        //gameOver = true;
+        gameOver = false;
         //make sure gameOverText does not display on Start
         gameOverText.gameObject.SetActive(false);
         

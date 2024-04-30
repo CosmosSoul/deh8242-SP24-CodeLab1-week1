@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
+    
 
     public int score = 0;
 
@@ -21,7 +22,7 @@ public class gameManager : MonoBehaviour
 
     public TextMeshProUGUI gameOverText;
     [FormerlySerializedAs("displayText")] public TextMeshProUGUI letterBankText;
-    public TextMeshProUGUI targetWordText;
+    public TextMeshProUGUI targetLettersText;
 
     public bool gameOverCheck;
 
@@ -33,12 +34,15 @@ public class gameManager : MonoBehaviour
     private string DATA_FULL_HS_FILE_PATH;
 
     private float timer;
+    public bool gameOver;
+    public bool timerOn = false;
 
-    public int maxTime;
+    public float maxTime = 30f;
 
     public float gameTime;
     public Stack<string> letterBank = new Stack<string>();
     public Dictionary<string, string> wordBank = new Dictionary<string, string>();
+  
     
     //A dictionary to hold the player's obtained words
     //private Dictionary<string, string> wordBank = new Dictionary<string, string>();
@@ -147,7 +151,7 @@ public class gameManager : MonoBehaviour
     //system datapath is appended to DATA_DIR and DATA_HS_FILE and set to DATA_FULL_HS_FILE_PATH
     void Start()
     {
-        //gameOverText.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         wordBank.Add("cab", "a car that you can ride in!");
     }
@@ -156,12 +160,31 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         //letterBankText.text = letterBank
+        if (!gameOver)
+        {
+            if (timerOn) {maxTime -= Time.deltaTime;}
+            {
+                
+                scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + asciLevelLoader.instance.CurrentLevel +
+                                 1;
+
+                if (maxTime <= 0f)
+                {
+                    asciLevelLoader.instance.CurrentLevel++;
+                    maxTime = 25f;
+                }
+                
+                
+            }
+        }
+        
     }
 
     //Easy word list for beginner level, should be called from level 2
     public void EasyWordL1()
     {
         //Letters are: O D G
+        targetLettersText.text = "O D G";
         wordBank.Add("Dog", "an animal that goes woof!");
         wordBank.Add("God", "who knows?");
         wordBank.Add("Go", "move towards something!");
@@ -171,6 +194,7 @@ public class gameManager : MonoBehaviour
     public void EasyWordL2()
     {
         //Letters are: A L E P
+        targetLettersText.text = "A L E P";
         wordBank.Add("leap", "big jump!");
         wordBank.Add("pale", "you're not looking so good...");
         wordBank.Add("peal", "I prefer without skin");
@@ -188,6 +212,7 @@ public class gameManager : MonoBehaviour
     public void MediumWordL1()
     {
         //Letters are : R E D I T 
+        targetLettersText.text = "R E D I T";
         wordBank.Add("Red", "the color of passion and of apples!");
         wordBank.Add("Dire", "serious things!");
         wordBank.Add("Tie", "the long thing on your chest, nice suit!");
@@ -209,6 +234,7 @@ public class gameManager : MonoBehaviour
     public void MediumWordL2()
     {
         //Letters are: S B U H A
+        targetLettersText.text = "S B U H A";
         wordBank.Add("bah", "humbug!");
         wordBank.Add("hub", "the center it all");
         wordBank.Add("ash", "our favorite classmate ;)");

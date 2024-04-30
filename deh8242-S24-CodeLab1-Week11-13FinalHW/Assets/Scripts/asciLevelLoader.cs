@@ -45,7 +45,8 @@ public class asciLevelLoader : MonoBehaviour
     //also creates a container in the Unity hierarchy to hold all the newly instantiated gameObjects
     //letters a-z, plus player, goal and enemy gameObjects should be accounted for in the switch statement
    public void LoadLevel()
-    {
+   {
+       gameManager.instance.timerOn = true;
         Destroy(level);
         level = new GameObject("Level Container");
 
