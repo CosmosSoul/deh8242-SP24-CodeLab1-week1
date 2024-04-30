@@ -276,14 +276,14 @@ public class playerController : MonoBehaviour
                 Debug.Log(gameManager.instance.wordBank["cab"]);
                 //gameManager.instance.levelNum++;
                 gameManager.instance.letterBankText.text = "";
-
-                asciLevelLoader.instance.CurrentLevel++;
+                gameManager.instance.Score++;
+                //asciLevelLoader.instance.CurrentLevel++;
             }
             //if letterBankText Stack does not match a key in the wordBank Dictionary then the current level resets, letterBankText also resets
             else
             {
                 Debug.Log("no no that's not it!");
-                asciLevelLoader.instance.LoadLevel();
+                //asciLevelLoader.instance.LoadLevel();
                 gameManager.instance.letterBankText.text = "";
             }
         }

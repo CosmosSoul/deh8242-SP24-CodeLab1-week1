@@ -42,7 +42,8 @@ public class gameManager : MonoBehaviour
     public float gameTime;
     public Stack<string> letterBank = new Stack<string>();
     public Dictionary<string, string> wordBank = new Dictionary<string, string>();
-  
+
+    public TextMeshProUGUI wordValueText;
     
     //A dictionary to hold the player's obtained words
     //private Dictionary<string, string> wordBank = new Dictionary<string, string>();
