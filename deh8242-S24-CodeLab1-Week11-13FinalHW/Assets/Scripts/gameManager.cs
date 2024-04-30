@@ -161,6 +161,7 @@ public class gameManager : MonoBehaviour
         gameOver = false;
         gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
+        Debug.Log(highScoreString);
         
         
         
@@ -181,8 +182,7 @@ public class gameManager : MonoBehaviour
             }
 
             scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " +
-                             asciLevelLoader.instance.CurrentLevel +
-                             1;
+                             (asciLevelLoader.instance.CurrentLevel + 1);
 
             if (maxTime <= 0f)
             {
@@ -194,10 +194,10 @@ public class gameManager : MonoBehaviour
 
         else
         {
-            scoreText.text = "Game Over!";
+            scoreText.text = "Game Over!" + "\n Your score is: " + Score + "\nThe high scores are: \n" + highScoreString;
         }
 
-        if (!gameOver && asciLevelLoader.instance.CurrentLevel == 6)
+        if (!gameOver && asciLevelLoader.instance.CurrentLevel == 5)
         {
             gameOverText.gameObject.SetActive(true);
             timerOn = false;
