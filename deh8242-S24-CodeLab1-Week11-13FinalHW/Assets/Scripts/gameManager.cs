@@ -161,15 +161,33 @@ public class gameManager : MonoBehaviour
     //Easy word list for beginner level, should be called from level 2
     public void EasyWordL1()
     {
+        //Letters are: O D G
         wordBank.Add("Dog", "an animal that goes woof!");
         wordBank.Add("God", "who knows?");
         wordBank.Add("Go", "move towards something!");
         wordBank.Add("Do", "make action, have at them!");
     }
+    //easy word list for beginner level, should be called from level 3 
+    public void EasyWordL2()
+    {
+        //Letters are: A L E P
+        wordBank.Add("leap", "big jump!");
+        wordBank.Add("pale", "you're not looking so good...");
+        wordBank.Add("peal", "I prefer without skin");
+        wordBank.Add("plea", "what was your excuse again?");
+        wordBank.Add("alp", "smell that fresh air!");
+        wordBank.Add("pal", "aww, what a friend!");
+        wordBank.Add("pea", "this small green vegetables goes well with carrots");
+        wordBank.Add("ale", "grab a pint?");
+        wordBank.Add("pa", "one of your parents");
+       // wordBank.Add("", "");
+       // wordBank.Add("", "");
+    }
 
-    //medium word list for medium level, should be called from level 3 
+    //medium word list for medium level, should be called from level 4 
     public void MediumWordL1()
     {
+        //Letters are : R E D I T 
         wordBank.Add("Red", "the color of passion and of apples!");
         wordBank.Add("Dire", "serious things!");
         wordBank.Add("Tie", "the long thing on your chest, nice suit!");
@@ -177,7 +195,39 @@ public class gameManager : MonoBehaviour
         wordBank.Add("Dirt", "its usually on the ground and makes things unclean :(");
         wordBank.Add("tire", "V - run of out energy, N - the wheels on the bus go round and round!");
         wordBank.Add("Rid", "Remove it from sight!");
+        wordBank.Add("tried", "you gave it your all!");
+        wordBank.Add("diet", "you are what you eat!");
+        wordBank.Add("edit", "Fix those errors!");
+        wordBank.Add("Ride", "let something or someone carry you");
+        wordBank.Add("tide", "the water approaches the shore");
+        wordBank.Add("tied", "you already wrapped it up!");
+        wordBank.Add("tier", "there are level to this...");
+        //wordBank.Add("", "");
     }
+    
+    //medium word list for medium level, should be called from level 5
+    public void MediumWordL2()
+    {
+        //Letters are: S B U H A
+        wordBank.Add("bah", "humbug!");
+        wordBank.Add("hub", "the center it all");
+        wordBank.Add("ash", "our favorite classmate ;)");
+        wordBank.Add("has", "you're holding it");
+        wordBank.Add("abs", "get that core burning!");
+        wordBank.Add("bus", "it's running late again");
+        wordBank.Add("sub", "usually underground...or under deli meats");
+        wordBank.Add("ah", "I see now");
+        wordBank.Add("uh", "i dont know");
+        wordBank.Add("ab", "only one?!");
+        wordBank.Add("as", "comparing this and/or that");
+        wordBank.Add("bush", "what lurks in there?");
+        wordBank.Add("us" , "just the two of...");
+        wordBank.Add("bash", "hit it very hard");
+        wordBank.Add("hubs", "more centres!");
+        //wordBank.Add("", "");
+        //wordBank.Add("", "");
+    }
+    
 
     //difficult word list for harder level, should be called late game
     public void DifficultWordL1()
