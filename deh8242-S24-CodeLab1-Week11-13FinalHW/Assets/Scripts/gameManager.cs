@@ -60,34 +60,40 @@ public class gameManager : MonoBehaviour
         {
             score = value;
             Debug.Log("Score Update!");
-
-            if (isHighScore(score))
-            {
-                int highScoreSlot = -1;
-
-                for (int i = 0; i < HighScores.Count; i++)
-                {
-                    if (score > _highscores[i])
-                    {
-                        highScoreSlot = i;
-                        break;
-                    }
-                }
-                _highscores.Insert(highScoreSlot, score);
-                _highscores = _highscores.GetRange(0, 7);
-
-                string scoreBoardText = "";
-
-                foreach (var highScore in _highscores)
-                {
-                    scoreBoardText += highScore + "\n";
-                }
-
-                highScoreString = scoreBoardText;
-                File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoreString);
-            }
         }
     }
+
+    void SetHighScore()
+            {
+                if (isHighScore(score))
+                {
+                    int highScoreSlot = -1;
+
+                    for (int i = 0; i < HighScores.Count; i++)
+                    {
+                        if (score > _highscores[i])
+                        {
+                            highScoreSlot = i;
+                            break;
+                        }
+                    }
+
+                    _highscores.Insert(highScoreSlot, score);
+                    _highscores = _highscores.GetRange(0, 7);
+
+                    string scoreBoardText = "";
+
+                    foreach (var highScore in _highscores)
+                    {
+                        scoreBoardText += highScore + "\n";
+                    }
+
+                    highScoreString = scoreBoardText;
+                    File.WriteAllText(DATA_FULL_HS_FILE_PATH, highScoreString);
+                }
+            }
+        
+    
 
     [FormerlySerializedAs("highscorestring")] public string highScoreString = "";
     private const string KEY_HIGH_SCORE = "High Score";
@@ -152,6 +158,7 @@ public class gameManager : MonoBehaviour
     //system datapath is appended to DATA_DIR and DATA_HS_FILE and set to DATA_FULL_HS_FILE_PATH
     void Start()
     {
+        gameOver = false;
         gameOverText.gameObject.SetActive(false);
         DATA_FULL_HS_FILE_PATH = Application.dataPath + DATA_DIR + DATA_HS_FILE;
         
@@ -168,25 +175,37 @@ public class gameManager : MonoBehaviour
         //letterBankText.text = letterBank
         if (!gameOver)
         {
-            if (timerOn) {maxTime -= Time.deltaTime;}
+            if (timerOn)
             {
-                
-                scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " + asciLevelLoader.instance.CurrentLevel +
-                                 1;
+                maxTime -= Time.deltaTime;
+            }
 
-                if (maxTime <= 0f)
-                {
-                    
-                    asciLevelLoader.instance.CurrentLevel++;
-                    maxTime = 25f;
-                }
+            scoreText.text = "Score: " + Score + "\nTime: " + (int)maxTime + "\nLevel: " +
+                             asciLevelLoader.instance.CurrentLevel +
+                             1;
 
-                
-                
-                
+            if (maxTime <= 0f)
+            {
+
+                asciLevelLoader.instance.CurrentLevel++;
+                maxTime = 30f;
             }
         }
-        
+
+        else
+        {
+            scoreText.text = "Game Over!";
+        }
+
+        if (!gameOver && asciLevelLoader.instance.CurrentLevel == 6)
+        {
+            gameOverText.gameObject.SetActive(true);
+            timerOn = false;
+            gameOver = true;
+            SetHighScore();
+
+
+        }
     }
 
     //Easy word list for beginner level, should be called from level 2
