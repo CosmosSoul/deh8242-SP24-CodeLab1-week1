@@ -277,7 +277,7 @@ public class playerController : MonoBehaviour
                 //gameManager.instance.levelNum++;
                 gameManager.instance.Score++;
                 gameManager.instance.letterBankText.text = "";
-               
+                asciLevelLoader.instance.LoadLevel();
                 //asciLevelLoader.instance.CurrentLevel++;
             }
             //if letterBankText Stack does not match a key in the wordBank Dictionary then the current level resets, letterBankText also resets
