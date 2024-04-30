@@ -25,21 +25,28 @@ public class asciLevelLoader : MonoBehaviour
             {
                 gameManager.instance.EasyWordL1();
                 Debug.Log(gameManager.instance.wordBank.Count);
+                gameManager.instance.letterBankText.text = "";
                 LoadLevel();
             }
             else if (CurrentLevel == 2)
             {
                 gameManager.instance.EasyWordL2();
+                Debug.Log(gameManager.instance.wordBank.Count);
+                gameManager.instance.letterBankText.text = "";
                 LoadLevel();
             }
             else if (CurrentLevel == 3)
             {
                 gameManager.instance.MediumWordL1();
+                Debug.Log(gameManager.instance.wordBank.Count);
+                gameManager.instance.letterBankText.text = "";
                 LoadLevel();
             }
             else if(CurrentLevel == 4)
             {
                 gameManager.instance.MediumWordL2();
+                Debug.Log(gameManager.instance.wordBank.Count);
+                gameManager.instance.letterBankText.text = "";
                 LoadLevel();
             }
             

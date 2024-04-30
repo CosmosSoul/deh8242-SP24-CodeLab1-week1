@@ -276,6 +276,7 @@ public class playerController : MonoBehaviour
                 //Debug.Log(gameManager.instance.wordBank["cab"]);
                 //gameManager.instance.levelNum++;
                 gameManager.instance.Score++;
+                gameManager.instance.wordBank.Remove(gameManager.instance.letterBankText.text);
                 gameManager.instance.letterBankText.text = "";
                 asciLevelLoader.instance.LoadLevel();
                 //asciLevelLoader.instance.CurrentLevel++;

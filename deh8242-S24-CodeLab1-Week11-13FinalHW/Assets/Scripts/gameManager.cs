@@ -194,6 +194,8 @@ public class gameManager : MonoBehaviour
     {
         //Letters are: O D G
         targetLettersText.text = "Your letters are: O D G";
+        
+        wordBank.Clear();
         wordBank.Add("dog", "an animal that goes woof!");
         wordBank.Add("god", "who knows?");
         wordBank.Add("go", "move towards something!");
@@ -204,6 +206,8 @@ public class gameManager : MonoBehaviour
     {
         //Letters are: A L E P
         targetLettersText.text = "Your letters are: A L E P";
+        
+        wordBank.Clear();
         wordBank.Add("leap", "big jump!");
         wordBank.Add("pale", "you're not looking so good...");
         wordBank.Add("peal", "I prefer without skin");
@@ -222,6 +226,8 @@ public class gameManager : MonoBehaviour
     {
         //Letters are : R E D I T 
         targetLettersText.text = "Your letters are: R E D I T";
+        
+        wordBank.Clear();
         wordBank.Add("Red", "the color of passion and of apples!");
         wordBank.Add("Dire", "serious things!");
         wordBank.Add("Tie", "the long thing on your chest, nice suit!");
@@ -244,6 +250,8 @@ public class gameManager : MonoBehaviour
     {
         //Letters are: S B U H A
         targetLettersText.text = "Your letters are: S B U H A";
+        
+        wordBank.Clear();
         wordBank.Add("bah", "humbug!");
         wordBank.Add("hub", "the center it all");
         wordBank.Add("ash", "our favorite classmate ;)");
